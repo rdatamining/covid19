@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.11.20)  26 MAR 2020 11:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.11.20)  26 MAR 2020 13:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1188,7 +1188,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1521.
 Here is how much of TeX's memory you used:
  15047 strings out of 492639
  221726 string characters out of 6129301
- 402926 words of memory out of 5000000
+ 402866 words of memory out of 5000000
  18500 multiletter control sequences out of 15000+600000
  86668 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1208,7 +1208,7 @@ m/lmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr17.pfb
 ></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/loc
 al/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive
 /2018/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on Coronavirus-data-analysis-world.pdf (32 pages, 819155 bytes).
+Output written on Coronavirus-data-analysis-world.pdf (32 pages, 809538 bytes).
 
 PDF statistics:
  597 PDF objects out of 1000 (max. 8388607)

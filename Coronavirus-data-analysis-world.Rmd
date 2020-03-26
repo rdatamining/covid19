@@ -63,7 +63,7 @@ At first, the datasets, which are three CSV files, are downloaded and saved as l
 ## source data files
 filenames <- c('time_series_covid19_confirmed_global.csv', 
                'time_series_covid19_deaths_global.csv', 
-               'time_series_19-covid-Recovered.csv')
+               'time_series_covid19_recovered_global.csv')
 url.path <- paste0('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/',
                    'master/csse_covid_19_data/csse_covid_19_time_series/')
 
@@ -78,7 +78,7 @@ bin <- lapply(filenames, download)
 ## load data into R
 raw.data.confirmed <- read.csv('./data/time_series_covid19_confirmed_global.csv') 
 raw.data.deaths <- read.csv('./data/time_series_covid19_deaths_global.csv') 
-raw.data.recovered <- read.csv('./data/time_series_19-covid-Recovered.csv')
+raw.data.recovered <- read.csv('./data/time_series_covid19_recovered_global.csv')
 
 dim(raw.data.confirmed)
 ```
@@ -137,7 +137,7 @@ data.deaths <- raw.data.deaths %>% cleanData() %>% rename(deaths=count)
 data.recovered <- raw.data.recovered %>% cleanData() %>% rename(recovered=count)
 
 ## merge above 3 datasets into one, by country and date
-data <- data.confirmed %>% merge(data.deaths, all.x=T) %>% merge(data.recovered, all.x=T)
+data <- data.confirmed %>% merge(data.deaths, all=T) %>% merge(data.recovered, all=T)
 # data %<>% mutate(recovered = ifelse(is.na(recovered), lag(recovered, 1), recovered))
 
 ## countries/regions with confirmed cases, excl. cruise ships
