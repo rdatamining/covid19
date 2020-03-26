@@ -1,0 +1,71 @@
+---
+title: "COVID-19 Map"
+author: |
+  | Yanchang Zhao
+  | yanchang@RDataMining.com
+  | http://RDataMining.com
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output: html_document
+---
+
+```{r setup, echo=T, cache=F, warning=F, message=F, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(magrittr) # pipe operations
+library(lubridate) # date operations
+library(tidyverse) # ggplot2, tidyr, dplyr...
+library(leaflet) # map
+```
+
+
+
+This report presents a world map of the Novel Coronavirus (COVID-19), using R and *leaflet*.
+
+The data source used for this analysis is *the 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository*^[https://github.com/CSSEGISandData/COVID-19] built by the Center for Systems Science and Engineering, Johns Hopkins University.
+
+The map shows the number of confirmed cases around the world. Click on the circles on the map to see the number of confirmed cases.
+
+```{r pressure, echo=FALSE}
+library(magrittr) # pipe operations
+library(lubridate) # date operations
+library(tidyverse) # ggplot2, tidyr, dplyr...
+library(leaflet) # map
+
+## source data files
+filenames <- c('time_series_covid19_confirmed_global.csv', 
+               'time_series_covid19_deaths_global.csv')
+url.path <- paste0('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/',
+                   'master/csse_covid_19_data/csse_covid_19_time_series/')
+
+## download files to local
+download <- function(filename) {
+  url <- file.path(url.path, filename)
+  dest <- file.path('./data', filename)
+  download.file(url, dest)
+}
+bin <- lapply(filenames, download)
+
+## load data into R
+data.confirmed <- read.csv('./data/time_series_covid19_confirmed_global.csv') 
+# data.deaths <- read.csv('./data/time_series_covid19_deaths_global.csv') 
+
+# latest date
+x <- data.confirmed
+max.date <- names(x)[ncol(x)] %>% substr(2,8) %>% mdy()
+max.date.txt <- max.date %>% format('%d %B %Y')
+
+
+## select last column, which is the number of latest confirmed cases
+x$confirmed <- x[, ncol(x)]
+x %<>% select(c(Country.Region, Province.State, Lat, Long, confirmed)) %>%
+  mutate(txt=paste0(Country.Region, ' - ', Province.State, ': ', confirmed))
+
+m <- leaflet(width=1200, height=800) %>% addTiles()
+# circle marker
+m %>% addCircleMarkers(x$Long, x$Lat, 
+                       radius=2+log2(x$confirmed), stroke=F,
+                       color='red', fillOpacity=0.5,
+                       popup=x$txt)
+
+```
+
+Created with the latest data on `r max.date.txt` UTC.
