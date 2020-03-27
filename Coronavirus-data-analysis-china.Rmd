@@ -1,0 +1,366 @@
+---
+title: "COVID-19 Data Analysis with R - China"
+author: |
+  | Yanchang Zhao
+  | yanchang@RDataMining.com
+  | http://RDataMining.com
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output: 
+  bookdown::pdf_document2:
+    fig_caption: yes
+    number_sections: yes
+    toc: yes
+  html_document: default
+link-citations: yes
+bibliography: /Users/zha248/Manuscripts/MyBib-new.bib
+biblio-style: plainnat
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=T, warning=F, message=F, fig.pos='H', fig.align='center')
+options(knitr.kable.NA = '')
+library(magrittr)
+library(tidyverse)
+library(kableExtra)
+library(gridExtra)
+library(lubridate)
+```
+
+# Introduction
+
+This is a simple analysis of data around the Novel Coronavirus (COVID-19) in China, to demonstrate data processing and visualisation with R, *tidyverse* and *ggplot2.* 
+
+I have also writen a similar report for COVID-19 worldwide. If you are interested, please find it at http://www.rdatamining.com/docs/Coronavirus-data-analysis-world.pdf.
+
+
+## Data Source
+
+The data sourse used for this analysis is Ding Xiang Yuan^[https://ncov.dxy.cn/ncovh5/view/pneumonia], which provides the data around the Novel Coronavirus (COVID-19) in China. Specifically, the data was retrieved from the *COVID-19/2019-nCoV Time Series Infection Data Warehouse* repository on GitHub^[https://github.com/BlankerL/DXY-COVID-19-Data]. Detailed descriptions of the data can be found at http://lab.isaaclin.cn/nCoV/en.
+
+
+## R Packages
+
+Blow is a list of R packages used for this analysis. Package *magrittr* is for pipe operations like `%>%` and `%<>%` and *lubridate* for date operations. Package *tidyverse* is a collection of R packages for data science, including *dplyr* and *tidyr* for data processing and *ggplot2* for graphics. Package *gridExtra* is for arranging multiple grid-based plots on a page and *kableExtra* works together with `kable()` from *knitr* to build complex HTML or LaTeX tables. 
+
+```{r load-libraries}
+library(magrittr)
+library(lubridate)
+library(tidyverse)
+library(gridExtra)
+library(kableExtra)
+```
+
+
+# Loading Data
+
+At first, the dataset, which is a CSV file, is downloaded and saved as a local file, and then it is loaded into R.
+
+```{r load-data}
+url <- 'https://raw.githubusercontent.com/BlankerL/DXY-COVID-19-Data/master/csv/DXYOverall.csv'
+filename <- './data/DXYOverall.csv'
+download.file(url, filename)
+data.raw <- read.csv(filename) 
+# summary(data.raw)
+# names(data.raw)
+```
+
+The data was last updated at `r data.raw$updateTime %>% as.character() %>% max()`.
+
+
+Then we select relevant columns and have a look at the first 30 rows.
+
+```{r raw-data}
+## select columns
+data.raw %<>% select(c(updateTime, curedCount, deadCount, 
+                       currentConfirmedCount, confirmedCount, suspectedCount,
+                       #  seriousCount,
+                       curedIncr, deadIncr, confirmedIncr, suspectedIncr
+                       # currentConfirmedIncr, 
+                       # seriousIncr
+                       ))
+head(data.raw, 30) %>% 
+  kable('latex', booktabs=T, caption='Raw Data (with Selected Columns Only)') %>%
+  kable_styling(font_size=4, latex_options = c('striped', 'hold_position', 'repeat_header'))
+```
+
+
+
+# Data Preparation
+
+
+## Selecting Last Record of Each Day
+
+There are many records with different timestamps for every single day. For this analysis, we focuse on daily numbers and therefore keep only the last record on each day. To acheieve that, we group dataset by date and then select the first record from each group (i.e., from each day).
+
+```{r process-data}
+## convert from character to date 
+data.raw %<>% mutate(date=date(updateTime))
+## sort by timestamp
+# data.raw %<>% arrange(updateTime)
+## select the latest record on each day
+data <- tbl_df(data.raw) %>%
+    group_by(date) %>%
+    top_n(1, updateTime)
+## sort by date ascendingly and remove updateTime
+data %<>% arrange(date) %>% select(-updateTime) 
+
+min.date <- min(data.raw$date)
+max.date <- max(data.raw$date)
+min.date.txt <- min.date %>% format('%d %B %Y')
+max.date.txt <- max.date %>% format('%d %B %Y')
+```
+
+
+## Daily New Cases and Death Rates {#death-rates}
+
+After that, the daily increases of death and cured cases and the death rates are calculated. 
+
+`rate.upper` is caculated with the total deaths and cured cases. It is the upper bound of death rate and the reasons are 
+
+1) there were much more deaths than cured cases when the coronavirus broke out and when it was not contained, and 
+2) the daily number of death will decrease and that of cured will increase as it becomes contained and more effective measures and treatments are used. 
+
+`rate.lower` is caculated with total deaths and confirmed cases. It is a lower bound of death rate, because there are and will be new deaths from the current confirmed cases. The final death rate is expected to be in between of the above two rates. 
+
+`rate.daily` is caculated with the daily deaths and cured cases and therefore is more volatile than the above two. However, it can give us a clue of the current situlation: whether it is very serious or is getting better.
+
+```{r new-cases-and-rates}
+## daily new cases
+n <- nrow(data)
+data %<>% as.data.frame() %>%
+  mutate(new.dead = deadCount - lag(deadCount, n=1),
+         new.cured = curedCount - lag(curedCount, n=1),
+         new.confirmed = confirmedCount - lag(confirmedCount, n=1))
+
+## death rate based on total deaths and cured cases
+data %<>% mutate(rate.upper = (100 * deadCount / (deadCount + curedCount)) %>% round(1))
+## lower bound: death rate based on total confirmed cases
+data %<>% mutate(rate.lower = (100 * deadCount / confirmedCount) %>% round(1))
+## death rate based on the number of death/cured on every single day
+data %<>% mutate(rate.daily = (100 * new.dead / (new.dead + new.cured)) %>% round(1))
+```
+
+
+## Data Imputation
+
+Some rows of column *currentConfirmedCount* are not populated in the raw dataset and we impute it as below
+
+```{r impute}
+## impute missing currentConfirmedCount
+data %<>% mutate(currentConfirmedCount = 
+                   ifelse(is.na(currentConfirmedCount), 
+                          confirmedCount - curedCount - deadCount, 
+                          currentConfirmedCount))
+```
+
+
+## Data Discrepancy
+
+There is discrepancy in the dataset, which is checked with code below. Please understand that some numbers are not 100% accurate. 
+
+```{r discrepancy}
+## check for data discrepancy
+data %<>% mutate(total = currentConfirmedCount + curedCount + deadCount)
+data %<>% mutate(error.dead = new.dead - deadIncr,
+                 error.cured = new.cured - curedIncr,
+                 error.total = total - confirmedCount)
+data$error.dead %>% summary()
+data$error.cured %>% summary()
+data$error.total %>% summary()
+# head(data %>% as.data.frame())
+```
+
+
+Since today's cured and death counts are subject to change and will not be finalised until end of today, we might want to exclude today's rates and new cases from some plots in next section.
+```{r remove-today}
+# data %<>% arrange(date)
+# if(data$date[n] == today()) {
+#   data$rate.daily[n] <- NA 
+#   data$new.dead[n] <- NA 
+#   data$new.cured[n] <- NA
+#   data$new.confirmed[n] <- NA
+# }
+```
+
+
+
+# Visualisation
+
+After tidying up the data, we visualise it with various charts.
+
+
+## Number of Cases
+
+Figure \@ref(fig:plots-cases) shows the number of COVID-19 cases in China. The line arnd area plots show the numbers of dead, cured, current confirmed and suppected cases. Note that, in the area plot, the total number of confirmed cases is represented by the total areas of confirmed, cured and deaths.
+
+```{r plots-cases, fig.height=9, fig.cap='Numbers of COVID-19 Cases'}
+# total/current confirmed cases
+p <- ggplot(data, aes(x=date)) +
+  geom_line(aes(y=suspectedCount, color='Suspected')) +
+  geom_line(aes(y=confirmedCount, color='Total Confimed')) +
+  geom_line(aes(y=currentConfirmedCount, color='Current Confimed')) +
+  geom_line(aes(y=curedCount, color='Cured')) +
+  geom_line(aes(y=deadCount, color='Deaths')) +
+  xlab('') + ylab('Count') +
+  theme(legend.title=element_blank(), axis.text.x = element_text(angle=45, hjust=1)) +
+  scale_color_manual(values = c(
+    'Suspected' = 'orange',
+    'Total Confimed' = 'purple',
+    'Current Confimed' = 'red',
+    'Cured' = 'green',
+    'Deaths' = 'black'))
+
+plot1 <- p + labs(title=paste0('Number of Cases - ', max.date.txt))
+plot2 <- p + scale_y_continuous(trans='log10') +
+  labs(title=paste0('Number of Cases (log scale) - ', max.date.txt))
+
+## convert from wide to long format, for purpose of drawing a area plot
+data.long <- data %>% select(c(date, suspectedCount, 
+                               currentConfirmedCount, curedCount, deadCount)) %>% 
+  rename(Suspected=suspectedCount, Confimed=currentConfirmedCount, 
+         Cured=curedCount, Deaths=deadCount) %>%
+  gather(key=type, value=count, -date)
+## set factor levels to show them in a desirable order
+data.long %<>% mutate(type = factor(type, c('Suspected', 'Confimed', 'Cured', 'Deaths')))
+## area plot
+plot3 <- ggplot(data.long, aes(x=date, y=count, fill=type)) +
+  geom_area(alpha=0.5) + xlab('') + ylab('Count') + 
+  labs(title=paste0('COVID-19 in China - ', max.date.txt)) +
+  theme(legend.title=element_blank(), axis.text.x = element_text(angle=45, hjust=1)) +
+  scale_fill_manual(values=c('orange', 'red', 'green', 'black'))
+
+## show three plots together 
+grid.arrange(plot1, plot2, plot3, ncol=1)
+```
+
+
+Figure \@ref(fig:plots-cases) (based on official stats) shows that the coronavirus seems to be contained in China, in that
+
+- there are a lot of recovered cases (in green) every day,
+- the remaining confrimed cases (in red) are shrinking significantly, and
+- suspected cases (in orange) are almost gone.
+
+
+## Current (or Remaining) Confirmed Cases
+
+```{r plots-current-confirmed, fig.height=3, fig.cap='Current (or Remaining) Confirmed Cases'}
+## current confirmed and its increase
+plot1 <- ggplot(data, aes(x=date, y=currentConfirmedCount)) + 
+  geom_point() + geom_smooth() +
+  xlab('') + ylab('Count') + labs(title='Current Confirmed Cases') +
+  theme(axis.text.x = element_text(angle=45, hjust=1))
+plot2 <- ggplot(data, aes(x=date, y=new.confirmed)) + 
+  geom_point() + geom_smooth() +
+  xlab('') + ylab('Count') + labs(title='Daily New Confirmed Cases') +
+  theme(axis.text.x = element_text(angle=45, hjust=1)) +
+  ylim(0, 4500)
+grid.arrange(plot1, plot2, ncol=2)
+```
+
+
+## Deaths and Cured Cases
+
+```{r plots-2, fig.height=6, fig.cap='Deaths and Cured Cases'}
+## a scatter plot with a smoothed line and vertical x-axis labels
+plot1 <- ggplot(data, aes(x=date, y=deadCount)) + 
+  geom_point() + geom_smooth() +
+  xlab('') + ylab('Count') + labs(title='Deaths') +
+  theme(axis.text.x = element_text(angle=45, hjust=1))
+plot2 <- ggplot(data, aes(x=date, y=curedCount)) + 
+  geom_point() + geom_smooth() +
+  xlab('') + ylab('Count') + labs(title='Cured Cases') +
+  theme(axis.text.x = element_text(angle=45, hjust=1))
+plot3 <- ggplot(data, aes(x=date, y=new.dead))  + 
+  geom_point() + geom_smooth()  +
+  xlab('') + ylab('Count') + labs(title='Daily New Deaths') +
+  theme(axis.text.x = element_text(angle=45, hjust=1))
+plot4 <- ggplot(data, aes(x=date, y=new.cured)) + 
+  geom_point() + geom_smooth()  +
+  xlab('') + ylab('Count') + labs(title='Daily New Cured Cases') +
+  theme(axis.text.x = element_text(angle=45, hjust=1))
+## show four plots together, with 2 plots in each row 
+grid.arrange(plot1, plot2, plot3, plot4, nrow=2)
+```
+
+
+## Death Rates
+
+Figure \@ref(fig:plots-deaths) shows death rates caculated in three different ways (see Section \@ref(death-rates) for details). The left chart shows the death rates from `r min.date.txt` to `r max.date.txt` and the right one is a zoom-in view of the rates in last two weeks.
+
+In the right chart, the upper bound (in blue) is decreasing, as there will be more cured cases and fewer deaths daily as time goes on. However, the lower bound (in green) keeps going up, as there are and will be new deaths from the current confirmed cases. Therefore, the final death rate is expected to be in-between of those two rates, and based on the latest data as of `r max.date.txt`, it will be between `r data$rate.lower[n]`% and `r data$rate.upper[n]`% (see the last row in the table at the end of this report).
+
+```{r plots-deaths, fig.height=3.5, fig.cap='Death Rate'}
+## three death rates
+plot1 <- ggplot(data, aes(x=date)) + 
+  geom_line(aes(y=rate.upper, colour='Upper bound')) +
+  geom_line(aes(y=rate.lower, colour='Lower bound')) +
+  geom_line(aes(y=rate.daily, colour='Daily')) +
+  xlab('') + ylab('Death Rate (%)') + labs(title='Overall') +
+  theme(legend.position='bottom', legend.title=element_blank(),
+        axis.text.x = element_text(angle=45, hjust=1)) +
+  ylim(0, 90)
+## focusing on last 2 weeks
+plot2 <- ggplot(data[n-(14:0),], aes(x=date)) + 
+  geom_line(aes(y=rate.upper, colour='Upper bound')) +
+  geom_line(aes(y=rate.lower, colour='Lower bound')) +
+  geom_line(aes(y=rate.daily, colour='Daily')) +
+  xlab('') + ylab('Death Rate (%)') + labs(title='Last two weeks') +
+  theme(legend.position='bottom', legend.title=element_blank(),
+        axis.text.x = element_text(angle=45, hjust=1)) +
+  ylim(0, 8)
+grid.arrange(plot1, plot2, ncol=2)
+```
+
+
+
+
+# Appendix A. Processed Data {-}
+
+Blow is the processed data for this analysis and visualisation. Note that numbers in the first row of the table are subject to change, if they are about today (`r format(Sys.time(), '%d %B %Y')`).
+
+```{r table}
+## sort by date descendingly and re-order columns
+data %<>% arrange(desc(date)) %>% 
+  select(c(date, confirmedCount, deadCount, curedCount, currentConfirmedCount,
+           new.confirmed, new.dead, new.cured, rate.upper, rate.daily, rate.lower))
+## to make column names shorter for output purpose only
+names(data) %<>% gsub(pattern='Count', replacement='')
+## output as a table
+data %>% kable('latex', booktabs=T, caption='COVID-19 in China',
+               format.args=list(big.mark=',')) %>%
+    kable_styling(font_size=6, latex_options = c('striped', 'hold_position', 'repeat_header'))
+```
+
+
+
+# Appendix B. How to Cite This Work {-}
+
+**Citation**
+
+Yanchang Zhao, COVID-19 Data Analysis with R -- China. RDataMining.com, 2020. URL: http://www.rdatamining.com/docs/Coronavirus-data-analysis-china.pdf. 
+
+**BibTex**
+
+\@techreport{Zhao2020Covid19china,  
+    Author = {Yanchang Zhao},  
+    Institution = {RDataMining.com},  
+    Title = {COVID-19 Data Analysis with R -- China},  
+    Url = {http://www.rdatamining.com/docs/Coronavirus-data-analysis-china.pdf},  
+    Year = {2020}}
+
+
+
+# Appendix C. Contact {-}
+
+Contact: 
+
+Dr. Yanchang Zhao
+
+Email: <yanchang@RDataMining.com>
+
+Twitter: [\@RDataMining](https://twitter.com/RDataMining)
+
+LinkedIn: http://group.rdatamining.com
+
+Comments and suggestions and welcome. Thanks!
