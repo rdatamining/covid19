@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.11.20)  27 MAR 2020 15:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.11.20)  30 MAR 2020 16:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -923,34 +923,34 @@ has been already used, duplicate ignored
 l.602 \end{Shaded}
                    <./Coronavirus-data-analysis-china_files/figure-latex/plots-
 deaths-1.pdf>]
-Overfull \hbox (25.43526pt too wide) in paragraph at lines 609--691
+Overfull \hbox (25.43526pt too wide) in paragraph at lines 609--695
  [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 727.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 731.
 [10] [11pdfTeX warning (ext4): destination with the same identifier (name{table
 .2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.727 \end{document}
+l.731 \end{document}
                     ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 727.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 731.
 (./Coronavirus-data-analysis-china.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 727.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 727.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 731.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 731.
 Package rerunfilecheck Info: File `Coronavirus-data-analysis-china.out' has not
  changed.
 (rerunfilecheck)             Checksum: 12A412F33B8B9DCDFD50C2DE2F0EE95C;2664.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 727.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 731.
  ) 
 Here is how much of TeX's memory you used:
  14979 strings out of 492639
  218709 string characters out of 6129301
- 384820 words of memory out of 5000000
+ 386820 words of memory out of 5000000
  18487 multiletter control sequences out of 15000+600000
  86817 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -968,7 +968,7 @@ fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type
 1/public/lm/lmri12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/l
 m/lmtk10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtt10.p
 fb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on Coronavirus-data-analysis-china.pdf (11 pages, 416751 bytes).
+Output written on Coronavirus-data-analysis-china.pdf (11 pages, 418607 bytes).
 
 PDF statistics:
  300 PDF objects out of 1000 (max. 8388607)
