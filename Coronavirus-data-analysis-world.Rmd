@@ -739,7 +739,7 @@ data.latest.all %>% arrange(desc(confirmed)) %>% select(-c(date, ranking)) %>%
                                 bold = ifelse(confirmed >= 1000 & death.rate >= 5, T, F))) %>%
   kable(format='latex', escape=F, booktabs=T, longtable=T, row.names=T, 
         caption=paste0('Cases by Country (', max.date.txt, ')'),
-        format.args=list(big.mark=',')) %>%
+        format.args=list(big.mark=','), align=c('l', rep('r', 7))) %>%
   kable_styling(font_size=6, latex_options=c('striped', 'hold_position', 'repeat_header'))
 ```
 
