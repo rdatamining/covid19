@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.11.20)  8 APR 2020 08:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.11.20)  9 APR 2020 08:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -655,6 +655,12 @@ Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
 \TeXr@lab=\toks34
 ) (./Coronavirus-data-analysis-world.aux
 
+LaTeX Warning: Label `tab:table-world' multiply defined.
+
+
+LaTeX Warning: Label `tab:table-by-country' multiply defined.
+
+
 LaTeX Warning: Label `tab:table-by-country' multiply defined.
 
 
@@ -1048,13 +1054,13 @@ l.975 \end{Shaded}
                    <./Coronavirus-data-analysis-world_files/figure-latex/plot-b
 y-type-2-1.pdf>]
 <Coronavirus-data-analysis-world_files/figure-latex/plot-by-country-1.pdf, id=4
-17, 567.11874pt x 707.64375pt>
+17, 568.1225pt x 707.64375pt>
 File: Coronavirus-data-analysis-world_files/figure-latex/plot-by-country-1.pdf 
 Graphic file (type pdf)
 <use Coronavirus-data-analysis-world_files/figure-latex/plot-by-country-1.pdf>
 Package pdftex.def Info: Coronavirus-data-analysis-world_files/figure-latex/plo
 t-by-country-1.pdf  used on input line 979.
-(pdftex.def)             Requested size: 469.77385pt x 586.17801pt.
+(pdftex.def)             Requested size: 469.7731pt x 585.14143pt.
 [21] [22pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.10}) has been already used, duplicate ignored
 
@@ -1105,82 +1111,82 @@ le.4}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.1142 \end{Shaded}
                    ] [28]
-Overfull \hbox (12.16335pt too wide) in alignment at lines 1275--1280
+Overfull \hbox (12.16335pt too wide) in alignment at lines 1276--1281
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (12.16335pt too wide) in alignment at lines 1280--1285
+Overfull \hbox (12.16335pt too wide) in alignment at lines 1281--1286
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (12.16335pt too wide) in alignment at lines 1285--1287
+Overfull \hbox (12.16335pt too wide) in alignment at lines 1286--1288
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (12.16335pt too wide) in alignment at lines 1287--1289
+Overfull \hbox (12.16335pt too wide) in alignment at lines 1288--1290
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (12.16335pt too wide) in alignment at lines 1289--1313
+Overfull \hbox (12.16335pt too wide) in alignment at lines 1290--1314
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (12.16335pt too wide) in alignment at lines 1313--1337
+Overfull \hbox (12.16335pt too wide) in alignment at lines 1314--1338
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (12.16335pt too wide) in alignment at lines 1337--1361
+Overfull \hbox (12.16335pt too wide) in alignment at lines 1338--1362
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (12.16335pt too wide) in alignment at lines 1361--1385
+Overfull \hbox (12.16335pt too wide) in alignment at lines 1362--1386
  [] [] [] [] [] [] [] [] [] 
  []
 
 [29]
-Overfull \hbox (12.16335pt too wide) in alignment at lines 1385--1409
+Overfull \hbox (12.16335pt too wide) in alignment at lines 1386--1410
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (12.16335pt too wide) in alignment at lines 1409--1433
+Overfull \hbox (12.16335pt too wide) in alignment at lines 1410--1434
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (12.16335pt too wide) in alignment at lines 1433--1457
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (12.16335pt too wide) in alignment at lines 1457--1481
+Overfull \hbox (12.16335pt too wide) in alignment at lines 1434--1458
  [] [] [] [] [] [] [] [] [] 
  []
 
 [30]
-Overfull \hbox (12.16335pt too wide) in alignment at lines 1481--1505
+Overfull \hbox (12.16335pt too wide) in alignment at lines 1458--1482
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (12.16335pt too wide) in alignment at lines 1505--1511
+Overfull \hbox (12.16335pt too wide) in alignment at lines 1482--1506
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (12.16335pt too wide) in alignment at lines 1506--1512
  [] [] [] [] [] [] [] [] [] 
  []
 
 [31]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1548.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1549.
 [32]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1548.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1549.
 (./Coronavirus-data-analysis-world.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1548.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1548.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1549.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1549.
 
 Package rerunfilecheck Info: File `Coronavirus-data-analysis-world.out' has not
  changed.
@@ -1188,16 +1194,16 @@ Package rerunfilecheck Info: File `Coronavirus-data-analysis-world.out' has not
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1548.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1549.
  ) 
 Here is how much of TeX's memory you used:
  15049 strings out of 492639
  221746 string characters out of 6129301
- 406366 words of memory out of 5000000
+ 399479 words of memory out of 5000000
  18500 multiletter control sequences out of 15000+600000
  86751 words of font info for 104 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 35i,9n,38p,994b,471s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 35i,9n,38p,994b,472s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
 texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</usr/local/texlive/2018/
 texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2018/texmf-dist
@@ -1213,7 +1219,7 @@ m/lmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr17.pfb
 ></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/loc
 al/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive
 /2018/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on Coronavirus-data-analysis-world.pdf (32 pages, 867993 bytes).
+Output written on Coronavirus-data-analysis-world.pdf (32 pages, 871734 bytes).
 
 PDF statistics:
  597 PDF objects out of 1000 (max. 8388607)

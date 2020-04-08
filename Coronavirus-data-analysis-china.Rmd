@@ -327,7 +327,7 @@ data %<>% arrange(desc(date)) %>%
 ## to make column names shorter for output purpose only
 names(data) %<>% gsub(pattern='Count', replacement='')
 ## output as a table
-data %>% kable('latex', booktabs=T, caption='COVID-19 in China',
+data %>% kable('latex', booktabs=T, longtable=T, caption='COVID-19 in China',
                format.args=list(big.mark=',')) %>%
     kable_styling(font_size=6, latex_options = c('striped', 'hold_position', 'repeat_header'))
 ```
