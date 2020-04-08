@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.11.20)  6 APR 2020 08:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.11.20)  9 APR 2020 08:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -653,7 +653,11 @@ Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
 \rotheadsize=\dimen164
 \c@nlinenum=\count139
 \TeXr@lab=\toks34
-) (./Coronavirus-data-analysis-china.aux)
+) (./Coronavirus-data-analysis-china.aux
+
+LaTeX Warning: Label `tab:table' multiply defined.
+
+)
 \openout1 = `Coronavirus-data-analysis-china.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 144.
@@ -923,43 +927,70 @@ has been already used, duplicate ignored
 l.602 \end{Shaded}
                    <./Coronavirus-data-analysis-china_files/figure-latex/plots-
 deaths-1.pdf>]
-Overfull \hbox (25.43526pt too wide) in paragraph at lines 609--703
- [][] 
+Overfull \hbox (25.43526pt too wide) in alignment at lines 606--611
+ [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 
-LaTeX Warning: Float too large for page by 48.58052pt on input line 703.
+Overfull \hbox (25.43526pt too wide) in alignment at lines 611--616
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Overfull \hbox (25.43526pt too wide) in alignment at lines 616--618
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 739.
-[10] [11pdfTeX warning (ext4): destination with the same identifier (name{table
-.2}) has been already used, duplicate ignored
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.739 \end{document}
-                    ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 739.
+Overfull \hbox (25.43526pt too wide) in alignment at lines 618--620
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (25.43526pt too wide) in alignment at lines 620--644
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (25.43526pt too wide) in alignment at lines 644--668
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (25.43526pt too wide) in alignment at lines 668--692
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (25.43526pt too wide) in alignment at lines 692--713
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[10]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 750.
+[11]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 750.
 (./Coronavirus-data-analysis-china.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 739.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 739.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 750.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 750.
 Package rerunfilecheck Info: File `Coronavirus-data-analysis-china.out' has not
  changed.
 (rerunfilecheck)             Checksum: 12A412F33B8B9DCDFD50C2DE2F0EE95C;2664.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 739.
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 750.
  ) 
 Here is how much of TeX's memory you used:
- 14977 strings out of 492639
- 218689 string characters out of 6129301
- 392601 words of memory out of 5000000
- 18487 multiletter control sequences out of 15000+600000
- 86734 words of font info for 110 fonts, out of 8000000 for 9000
+ 14981 strings out of 492639
+ 218736 string characters out of 6129301
+ 396590 words of memory out of 5000000
+ 18490 multiletter control sequences out of 15000+600000
+ 91002 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 35i,9n,38p,994b,381s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local
-/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</usr/local/texlive/2018/
+ 35i,9n,38p,994b,471s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
+texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</usr/local/texlive/2018/
 texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2018/texmf-dist
 /fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2018/texmf-dist/fonts/typ
 e1/public/lm/lmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/l
@@ -969,13 +1000,14 @@ texlive/2018/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2018
 /texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2018/texmf-dist/
 fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type
 1/public/lm/lmri12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/l
-m/lmtk10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtt10.p
-fb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on Coronavirus-data-analysis-china.pdf (11 pages, 422406 bytes).
+m/lmri7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtk10.pf
+b></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/lo
+cal/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
+Output written on Coronavirus-data-analysis-china.pdf (11 pages, 438264 bytes).
 
 PDF statistics:
- 300 PDF objects out of 1000 (max. 8388607)
- 259 compressed objects within 3 object streams
+ 304 PDF objects out of 1000 (max. 8388607)
+ 262 compressed objects within 3 object streams
  57 named destinations out of 1000 (max. 500000)
  16541 words of extra memory for PDF output out of 17280 (max. 10000000)
 
