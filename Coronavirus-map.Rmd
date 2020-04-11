@@ -31,21 +31,22 @@ library(tidyverse) # ggplot2, tidyr, dplyr...
 library(leaflet) # map
 
 ## source data files
-filenames <- c('time_series_covid19_confirmed_global.csv', 
-               'time_series_covid19_deaths_global.csv')
+# filenames <- c('time_series_covid19_confirmed_global.csv', 
+#                'time_series_covid19_deaths_global.csv')
 url.path <- paste0('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/',
                    'master/csse_covid_19_data/csse_covid_19_time_series/')
 
 ## download files to local
-download <- function(filename) {
-  url <- file.path(url.path, filename)
-  dest <- file.path('./data', filename)
-  download.file(url, dest)
-}
-bin <- lapply(filenames, download)
+# download <- function(filename) {
+#   url <- file.path(url.path, filename)
+#   dest <- file.path('./data', filename)
+#   download.file(url, dest)
+# }
+# bin <- lapply(filenames, download)
 
 ## load data into R
-data.confirmed <- read.csv('./data/time_series_covid19_confirmed_global.csv') 
+data.confirmed <- read.csv(file.path(url.path, 'time_series_covid19_confirmed_global.csv'))
+# data.confirmed <- read.csv('./data/time_series_covid19_confirmed_global.csv') 
 # data.deaths <- read.csv('./data/time_series_covid19_deaths_global.csv') 
 
 # latest date

@@ -100,11 +100,11 @@ dates <- names(raw.data.confirmed)[5:n.col] %>% substr(2,8) %>% mdy()
 range(dates)
 min.date <- min(dates)
 max.date <- max(dates)
-min.date.txt <- min.date %>% format('%d %b %Y')
-max.date.txt <- max.date %>% format('%d %b %Y')
+min.date.txt <- min.date %>% format('%d %b %Y') 
+max.date.txt <- max.date %>% format('%d %b %Y') %>% paste('UTC')
 ```
 
-It shows that the data was last updated on `r max.date.txt` UTC and all the stats and charts in this report are based on that data.
+It shows that the data was last updated on `r max.date.txt` and all the stats and charts in this report are based on that data.
 
 
 
@@ -150,7 +150,7 @@ data %>% filter(country=='China') %>% head(10) %>%
   kable_styling(latex_options = c('striped', 'hold_position', 'repeat_header'))
 ```
 
-There are `r length(countries)` countries with confirmed COVID-19 cases, as of `r max.date.txt` UTC.
+There are `r length(countries)` countries with confirmed COVID-19 cases, as of `r max.date.txt`.
 
 
 ## Worldwide Cases
@@ -297,7 +297,7 @@ plot1 <- world.long %>% filter(type != 'Total Confirmed') %>%
   labs(title=paste0('Numbers of Cases Worldwide - ', max.date.txt)) +
   scale_fill_manual(values=c('red', 'green', 'black')) +
   theme(legend.title=element_blank(), legend.position='bottom', 
-        plot.title = element_text(size=8),
+        plot.title = element_text(size=7),
         axis.title.x=element_blank(),
         axis.title.y=element_blank(),
         legend.key.size=unit(0.2, 'cm'),
@@ -311,7 +311,7 @@ plot2 <- world.long %>%
   labs(title=paste0('Numbers of Cases Worldwide (log scale) - ', max.date.txt)) +
   scale_color_manual(values=c('purple', 'red', 'green', 'black')) +
   theme(legend.title=element_blank(), legend.position='bottom', 
-        plot.title = element_text(size=8),
+        plot.title = element_text(size=7),
         axis.title.x=element_blank(),
         axis.title.y=element_blank(),
         legend.key.size=unit(0.2, 'cm'),
@@ -319,7 +319,7 @@ plot2 <- world.long %>%
         axis.text=element_text(size=7),
         axis.text.x=element_text(angle=45, hjust=1)) +
   scale_y_continuous(trans='log10')
-
+## show two plots side by side
 grid.arrange(plot1, plot2, ncol=2)
 ```
 
@@ -517,33 +517,38 @@ p <- df %>% ggplot(aes(x=confirmed, y=deaths, group=country)) +
   theme(legend.title=element_blank(), 
         legend.text=element_text(size=8),
         legend.key.size=unit(0.5, 'cm'))
-p
-p + scale_x_log10() + scale_y_log10()
+p + labs(title=paste0('Top 20 Countries'))
+p + scale_x_log10() + scale_y_log10() +
+  labs(title=paste0('Top 20 Countries (log scale)'))
 ```
 
 
 The two figures below show the numbers of confirmed cases and deaths of top 20 countries, as well as the death rates up to `r max.date.txt`.
 
-```{r plot-all-countires, fig.height=9, fig.width=8, out.width='\\textwidth', fig.cap='Top 20 Countries'}
+```{r circle-top20, fig.height=9, fig.width=8, out.width='\\textwidth', fig.cap='Top 20 Countries'}
 df <- data.latest %>% filter(country %in% setdiff(top.countries, 'World')) 
+## breaks for circle size in legend; needs to be adjusted accordingly when the number of total confirmed cases increases signficantly
+breaks.confirmed <- c(5e3, 1e4, 2e4, 5e4, 1e5, 2e5, 4e5, 1e6)
 
 plot1 <- df %>% ggplot(aes(x=confirmed, y=deaths, col=death.rate, size=current.confirmed)) +
-  scale_size(name='Current Confirmed', trans='log2', breaks=c(1e3, 2e3, 5e3, 1e4, 2e4, 4e4)) +
+  scale_size(name='Current Confirmed', trans='log2', breaks=breaks.confirmed) +
   geom_text(aes(label=country), size=2.5, check_overlap=T, vjust=-1.6) +
   geom_point() + 
   xlab('Total Confirmed') + ylab('Total Deaths') +
   labs(col="Death Rate (%)") +
   scale_color_gradient(low='#56B1F7', high='#132B43') +
-  scale_x_log10() + scale_y_log10() 
+  scale_x_log10() + scale_y_log10() +
+  labs(title=paste0('Top 20 Countries - Confirmed vs Deaths (log scale)'))
 
 plot2 <- df %>% ggplot(aes(x=new.confirmed, y=new.deaths, col=death.rate, size=current.confirmed)) +
-  scale_size(name='Current Confirmed', trans='log2', breaks=c(1e3, 2e3, 5e3, 1e4, 2e4, 4e4)) +
+  scale_size(name='Current Confirmed', trans='log2', breaks=breaks.confirmed) +
   geom_text(aes(label=country), size=2.5, check_overlap=T, vjust=-1.6) +
   geom_point() +
   xlab('New Confirmed') + ylab('New Deaths') +
   labs(col="Death Rate (%)") +
   scale_color_gradient(low='#56B1F7', high='#132B43') +
-  scale_x_log10() + scale_y_log10()
+  scale_x_log10() + scale_y_log10() +
+  labs(title=paste0('Top 20 Countries - New Confirmed vs New Deaths (log scale)'))
 
 grid.arrange(plot1, plot2, ncol=1)
 ```
