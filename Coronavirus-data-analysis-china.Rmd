@@ -1,5 +1,5 @@
 ---
-title: "COVID-19 Data Analysis with R - China"
+title: "COVID-19 Data Analysis with R - China^[\\copyright 2020 Yanchang Zhao, RDataMining.com.]"
 author: |
   | Yanchang Zhao
   | yanchang@RDataMining.com
@@ -31,7 +31,7 @@ library(lubridate)
 
 This is a simple analysis of data around the Novel Coronavirus (COVID-19) in China, to demonstrate data processing and visualisation with R, *tidyverse* and *ggplot2.* 
 
-I have also writen a similar report for COVID-19 worldwide. If you are interested, please find it at http://www.rdatamining.com/docs/Coronavirus-data-analysis-world.pdf.
+I have also produced a similar report for COVID-19 worldwide. If you are interested, please find it at http://www.rdatamining.com/docs/Coronavirus-data-analysis-world.pdf.
 
 
 ## Data Source
@@ -50,6 +50,12 @@ library(tidyverse)
 library(gridExtra)
 library(kableExtra)
 ```
+
+
+## Notes
+
+If you want to run the R scripts without using R Markdown, please remove all the `kable` related stuff when printing the data. 
+
 
 
 # Loading Data
@@ -144,7 +150,7 @@ data %<>% mutate(rate.daily = (100 * new.dead / (new.dead + new.cured)) %>% roun
 
 ## Data Imputation
 
-Some rows of column *currentConfirmedCount* are not populated in the raw dataset and we impute it as below
+Some rows of column *currentConfirmedCount* are not populated in the raw dataset and we impute it as below.
 
 ```{r impute}
 ## impute missing currentConfirmedCount
@@ -211,9 +217,23 @@ p <- ggplot(data, aes(x=date)) +
     'Cured' = 'green',
     'Deaths' = 'black'))
 
-plot1 <- p + labs(title=paste0('Number of Cases - ', max.date.txt))
+## draw a plot and add annotations
+plot1 <- p + labs(title=paste0('Number of Cases - ', max.date.txt)) + 
+  annotate('segment', x=ymd('2020-02-04'), xend=ymd('2020-02-11'), 
+           y=65000, yend=52000, colour='skyblue', size=0.5, 
+           arrow=arrow(length=unit(0.2, 'cm'))) +
+  geom_text(x=ymd('2020-02-01'), y=73000, 
+            label='New criteria introduced \n and new Heads of \n Wuhan & Hubei started',
+            color='skyblue', size=2) + 
+  annotate('segment', x=ymd('2020-04-10'), xend=ymd('2020-04-16'), 
+           y=22000, yend=7000, colour='skyblue', size=0.5, 
+           arrow=arrow(length=unit(0.2, 'cm'))) +
+  geom_text(x=ymd('2020-04-10'), y=25000, 
+            label='Death toll rectified',
+            color='skyblue', size=2)
+  
 plot2 <- p + scale_y_continuous(trans='log10') +
-  labs(title=paste0('Number of Cases (log scale) - ', max.date.txt))
+  labs(title=paste0('Number of Cases (log scale) - ', max.date.txt)) 
 
 ## convert from wide to long format, for purpose of drawing a area plot
 data.long <- data %>% select(c(date, suspectedCount, 
@@ -244,6 +264,8 @@ Figure \@ref(fig:plots-cases) (based on official stats) shows that the coronavir
 
 ## Current (or Remaining) Confirmed Cases
 
+In the right chart of Figure \@ref(fig:plots-current-confirmed), there is a big spike of more than 15,000 new confirmed cases on 13 February 2020. The reasons are that Chinese government changed the criteria for confirmed cases and new measures were introduced by a new Head of Hubei Province and a new Head of Wuhan City, who replaced their predecessors on that day.
+
 ```{r plots-current-confirmed, fig.height=3, fig.cap='Current (or Remaining) Confirmed Cases'}
 ## current confirmed and its increase
 plot1 <- ggplot(data, aes(x=date, y=currentConfirmedCount)) + 
@@ -253,23 +275,26 @@ plot1 <- ggplot(data, aes(x=date, y=currentConfirmedCount)) +
 plot2 <- ggplot(data, aes(x=date, y=new.confirmed)) + 
   geom_point() + geom_smooth() +
   xlab('') + ylab('Count') + labs(title='Daily New Confirmed Cases') +
-  theme(axis.text.x = element_text(angle=45, hjust=1)) +
-  ylim(0, 4500)
+  theme(axis.text.x = element_text(angle=45, hjust=1))
+  # +  ylim(0, 4500)
 grid.arrange(plot1, plot2, ncol=2)
 ```
 
 
 ## Deaths and Cured Cases
 
-```{r plots-2, fig.height=6, fig.cap='Deaths and Cured Cases'}
+In the bottom-left chart of Figure \@ref(fig:plots-deaths-cured), there is a big spike of 1,290 new deaths on 17 April 2020. The explanation given by Chinese govenment is that it is caused by a rectification of previously missed deaths.
+
+
+```{r plots-deaths-cured, fig.height=6, fig.cap='Deaths and Cured Cases'}
 ## a scatter plot with a smoothed line and vertical x-axis labels
 plot1 <- ggplot(data, aes(x=date, y=deadCount)) + 
   geom_point() + geom_smooth() +
-  xlab('') + ylab('Count') + labs(title='Deaths') +
+  xlab('') + ylab('Count') + labs(title='Cumulative Deaths') +
   theme(axis.text.x = element_text(angle=45, hjust=1))
 plot2 <- ggplot(data, aes(x=date, y=curedCount)) + 
   geom_point() + geom_smooth() +
-  xlab('') + ylab('Count') + labs(title='Cured Cases') +
+  xlab('') + ylab('Count') + labs(title='Cumulative Cured Cases') +
   theme(axis.text.x = element_text(angle=45, hjust=1))
 plot3 <- ggplot(data, aes(x=date, y=new.dead))  + 
   geom_point() + geom_smooth()  +
@@ -299,7 +324,7 @@ plot1 <- ggplot(data, aes(x=date)) +
   xlab('') + ylab('Death Rate (%)') + labs(title='Overall') +
   theme(legend.position='bottom', legend.title=element_blank(),
         axis.text.x = element_text(angle=45, hjust=1)) +
-  ylim(0, 90)
+  ylim(0, 100)
 ## focusing on last 2 weeks
 plot2 <- ggplot(data[n-(14:0),], aes(x=date)) + 
   geom_line(aes(y=rate.upper, colour='Upper bound')) +
@@ -323,13 +348,31 @@ Blow is the processed data for this analysis and visualisation. Note that number
 ## sort by date descendingly and re-order columns
 data %<>% arrange(desc(date)) %>% 
   select(c(date, confirmedCount, deadCount, curedCount, currentConfirmedCount,
-           new.confirmed, new.dead, new.cured, rate.upper, rate.daily, rate.lower))
+           new.confirmed, new.dead, new.cured, rate.upper, rate.daily, rate.lower)) 
 ## to make column names shorter for output purpose only
 names(data) %<>% gsub(pattern='Count', replacement='')
 ## output as a table
-data %>% kable('latex', booktabs=T, longtable=T, caption='COVID-19 in China',
-               format.args=list(big.mark=',')) %>%
-    kable_styling(font_size=6, latex_options = c('striped', 'hold_position', 'repeat_header'))
+## highlight two anomaly days, one with new.confirmed >= 10000 and the other with new.dead >= 1000
+data %>% 
+  mutate(rate.upper = rate.upper %>% format(nsmall=1) %>% paste0('\\%'),
+         rate.lower = rate.lower %>% format(nsmall=1) %>% paste0('\\%'),
+         rate.daily = rate.daily %>% format(nsmall=1) %>% paste0('\\%')) %>%
+  mutate(new.confirmed=ifelse(!is.na(new.confirmed) & new.confirmed >= 10000,
+                              cell_spec(format(new.confirmed, big.mark=','), 
+                                        "latex", color="red", bold=T),
+                              cell_spec(format(new.confirmed, big.mark=','), 
+                                        "latex", color="black", bold=F)),
+         new.dead=ifelse(!is.na(new.dead) & new.dead >= 1000,
+                              cell_spec(format(new.dead, big.mark=','), 
+                                        "latex", color="red", bold=T),
+                              cell_spec(format(new.dead, big.mark=','), 
+                                        "latex", color="black", bold=F))
+         ) %>%
+  kable(format='latex', escape=F, booktabs=T, longtable=T, 
+        caption='COVID-19 in China',
+        format.args=list(big.mark=','),
+        align=c('l', rep('r', 10))) %>%
+  kable_styling(font_size=6, latex_options = c('striped', 'hold_position', 'repeat_header'))
 ```
 
 
