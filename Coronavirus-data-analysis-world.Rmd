@@ -1,5 +1,5 @@
 ---
-title: "COVID-19 Data Analysis with R - Worldwide"
+title: "COVID-19 Data Analysis with R - Worldwide^[\\copyright 2020 Yanchang Zhao, RDataMining.com.]"
 author: |
   | Yanchang Zhao
   | yanchang@RDataMining.com
@@ -88,7 +88,7 @@ Each dataset has `r nrow(raw.data.confirmed)` rows, corresponding to country/reg
 ```{r raw-data}
 raw.data.confirmed[1:10, 1:10] %>%
   kable('latex', booktabs=T, caption='Raw Data (Confirmed, First 10 Columns only)') %>%
-  kable_styling(font_size=6, latex_options = c('striped', 'hold_position', 'repeat_header'))
+  kable_styling(font_size=5, latex_options = c('striped', 'hold_position', 'repeat_header'))
 ```
 
 Below we check the time frame of the data.
@@ -381,7 +381,7 @@ Figure \@ref(fig:plots-deaths) shows death rates caculated in three different wa
 
 In the right chart, the upper bound (in blue) is decreasing, as there will be more recovered cases and fewer dead ones daily as time goes on. However, the lower bound (in green) keeps going up, as there are and will be new deaths from the current confirmed cases. Therefore, the final death rate is expected to be in-between of those two rates, and based on the latest data retrieved as of `r max.date.txt` UTC, it will be between `r data.world$rate.lower[n]`% and `r data.world$rate.upper[n]`%.
 
-A surge in the daily death rate (in red) suggests that the situlation is changing dramatically (actually, getting worse) and that above lower/upper bounds are likely to increase shortly. A likely reason of that surge is the recent outbreak of coronavirus in Italy, Iran and some other European countries.
+A surge in the daily death rate (in red) suggests that the situlation is changing dramatically (actually, getting worse) and that above lower/upper bounds are likely to increase shortly. A likely reason of that surge is the outbreak of coronavirus in Iran, European and US.
 
 ```{r plots-deaths, fig.height=3, fig.cap='Death Rate'}
 ## three death rates
@@ -528,7 +528,7 @@ The two figures below show the numbers of confirmed cases and deaths of top 20 c
 ```{r circle-top20, fig.height=9, fig.width=8, out.width='\\textwidth', fig.cap='Top 20 Countries'}
 df <- data.latest %>% filter(country %in% setdiff(top.countries, 'World')) 
 ## breaks for circle size in legend; needs to be adjusted accordingly when the number of total confirmed cases increases signficantly
-breaks.confirmed <- c(5e3, 1e4, 2e4, 5e4, 1e5, 2e5, 4e5, 1e6)
+breaks.confirmed <- c(5e3, 1e4, 2e4, 5e4, 1e5, 2e5, 5e5, 1e6, 2e6, 5e6, 1e7)
 
 plot1 <- df %>% ggplot(aes(x=confirmed, y=deaths, col=death.rate, size=current.confirmed)) +
   scale_size(name='Current Confirmed', trans='log2', breaks=breaks.confirmed) +
@@ -729,9 +729,15 @@ data.world %<>% arrange(desc(date)) %>%
   select(c(date, confirmed, deaths, recovered, current.confirmed,
            new.confirmed, new.deaths, new.recovered, rate.lower, rate.upper, rate.daily))
 ## output as a table
-data.world %>% kable('latex', booktabs=T, longtable=T, caption='Cases in the Whole World',
-               format.args=list(big.mark=',')) %>%
-    kable_styling(font_size=4, latex_options=c('striped', 'hold_position', 'repeat_header'))
+data.world %>% 
+  mutate(rate.upper = rate.upper %>% format(nsmall=1) %>% paste0('\\%'),
+         rate.lower = rate.lower %>% format(nsmall=1) %>% paste0('\\%'),
+         rate.daily = rate.daily %>% format(nsmall=1) %>% paste0('\\%')) %>% 
+  kable('latex', escape=F, booktabs=T, longtable=T, 
+        caption='Cases in the Whole World',
+        format.args=list(big.mark=','),
+        align=c('l', rep('r', 10))) %>%
+  kable_styling(font_size=4, latex_options=c('striped', 'hold_position', 'repeat_header'))
 ```
 
 ## Appendix A.2 Latest Cases by Country {-}
@@ -739,12 +745,15 @@ data.world %>% kable('latex', booktabs=T, longtable=T, caption='Cases in the Who
 ```{r table-by-country}
 ## hightlight high death rates (if >= 5%) for those countries with 1000+ confirmed cases
 data.latest.all %>% arrange(desc(confirmed)) %>% select(-c(date, ranking)) %>%
-  mutate(death.rate = cell_spec(death.rate, "latex", 
-                                color = ifelse(confirmed >= 1000 & death.rate >= 5, "red", "black"),
-                                bold = ifelse(confirmed >= 1000 & death.rate >= 5, T, F))) %>%
+  mutate(death.rate=ifelse(confirmed >= 1000 & death.rate >= 5,
+                           cell_spec(format(death.rate, big.mark=',') %>% paste0('%'), 
+                                     "latex", color="red", bold=T),
+                           cell_spec(format(death.rate, big.mark=',') %>% paste0('%'), 
+                                     "latex", color="black", bold=F))) %>%
   kable(format='latex', escape=F, booktabs=T, longtable=T, row.names=T, 
         caption=paste0('Cases by Country (', max.date.txt, ')'),
-        format.args=list(big.mark=','), align=c('l', rep('r', 7))) %>%
+        format.args=list(big.mark=','), 
+        align=c('l', rep('r', 7))) %>%
   kable_styling(font_size=6, latex_options=c('striped', 'hold_position', 'repeat_header'))
 ```
 
