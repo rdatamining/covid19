@@ -38,10 +38,12 @@ I have also produced a similar report for COVID-19 worldwide. If you are interes
 
 The data sourse used for this analysis is Ding Xiang Yuan^[https://ncov.dxy.cn/ncovh5/view/pneumonia], which provides the data around the Novel Coronavirus (COVID-19) in China. Specifically, the data was retrieved from the *COVID-19/2019-nCoV Time Series Infection Data Warehouse* repository on GitHub^[https://github.com/BlankerL/DXY-COVID-19-Data]. Detailed descriptions of the data can be found at http://lab.isaaclin.cn/nCoV/en.
 
+The data was collected from 24 January 2020, the second day of Wuhan lockdown.
+
 
 ## R Packages
 
-Blow is a list of R packages used for this analysis. Package *magrittr* is for pipe operations like `%>%` and `%<>%` and *lubridate* for date operations. Package *tidyverse* is a collection of R packages for data science, including *dplyr* and *tidyr* for data processing and *ggplot2* for graphics. Package *gridExtra* is for arranging multiple grid-based plots on a page and *kableExtra* works together with `kable()` from *knitr* to build complex HTML or LaTeX tables. 
+Blow is a list of R packages used for this analysis. Package *magrittr* is for pipe operations like `%>%` and `%<>%` and *lubridate* is for date operations. Package *tidyverse* is a collection of R packages for data science, including *dplyr* and *tidyr* for data processing and *ggplot2* for graphics. Package *gridExtra* is for arranging multiple grid-based plots on a page and *kableExtra* works together with `kable()` from *knitr* to build complex HTML or LaTeX tables. 
 
 ```{r load-libraries}
 library(magrittr)
@@ -125,7 +127,7 @@ After that, the daily increases of death and cured cases and the death rates are
 `rate.upper` is caculated with the total deaths and cured cases. It is the upper bound of death rate and the reasons are 
 
 1) there were much more deaths than cured cases when the coronavirus broke out and when it was not contained, and 
-2) the daily number of death will decrease and that of cured will increase as it becomes contained and more effective measures and treatments are used. 
+2) the daily number of death will decrease and that of the cured will increase as it becomes contained and more effective measures and treatments are used. 
 
 `rate.lower` is caculated with total deaths and confirmed cases. It is a lower bound of death rate, because there are and will be new deaths from the current confirmed cases. The final death rate is expected to be in between of the above two rates. 
 
@@ -198,7 +200,7 @@ After tidying up the data, we visualise it with various charts.
 
 ## Number of Cases
 
-Figure \@ref(fig:plots-cases) shows the number of COVID-19 cases in China. The line arnd area plots show the numbers of dead, cured, current confirmed and suppected cases. Note that, in the area plot, the total number of confirmed cases is represented by the total areas of confirmed, cured and deaths.
+Figure \@ref(fig:plots-cases) shows the number of COVID-19 cases in China. The line and area plots show the numbers of dead, cured, current confirmed and suppected cases. Note that, in the area plot, the total number of confirmed cases is represented by the total areas of confirmed, cured and deaths.
 
 ```{r plots-cases, fig.height=9, fig.cap='Numbers of COVID-19 Cases'}
 # total/current confirmed cases
@@ -219,23 +221,35 @@ p <- ggplot(data, aes(x=date)) +
 
 ## draw a plot and add annotations
 plot1 <- p + labs(title=paste0('Number of Cases - ', max.date.txt)) + 
-  annotate('segment', x=ymd('2020-02-04'), xend=ymd('2020-02-11'), 
-           y=65000, yend=52000, colour='skyblue', size=0.5, 
+  annotate('segment', x=ymd('2020-01-27'), xend=ymd('2020-01-24'), 
+           y=29000, yend=5000, colour='skyblue', size=0.5, 
            arrow=arrow(length=unit(0.2, 'cm'))) +
-  geom_text(x=ymd('2020-02-01'), y=73000, 
-            label='New criteria introduced \n and new Heads of \n Wuhan & Hubei started',
+  geom_text(x=ymd('2020-01-28'), y=35000, 
+            label='Wuhan lockdown\n on 23 Jan',
             color='skyblue', size=2) + 
-  annotate('segment', x=ymd('2020-04-10'), xend=ymd('2020-04-16'), 
-           y=22000, yend=7000, colour='skyblue', size=0.5, 
+  annotate('segment', x=ymd('2020-02-02'), xend=ymd('2020-02-11'), 
+           y=64000, yend=52000, colour='skyblue', size=0.5, 
            arrow=arrow(length=unit(0.2, 'cm'))) +
-  geom_text(x=ymd('2020-04-10'), y=25000, 
-            label='Death toll rectified',
+  geom_text(x=ymd('2020-02-01'), y=75000, 
+            label='New criteria introduced \n and new Heads of \n Wuhan & Hubei started\n on 13 Feb',
+            color='skyblue', size=2) + 
+  annotate('segment', x=ymd('2020-04-08'), xend=ymd('2020-04-08'), 
+           y=14000, yend=6000, colour='skyblue', size=0.5, 
+           arrow=arrow(length=unit(0.2, 'cm'))) +
+  geom_text(x=ymd('2020-04-07'), y=20000, 
+            label='Wuhan unlocked\n on 8 Apr',
+            color='skyblue', size=2) +
+  annotate('segment', x=ymd('2020-04-17'), xend=ymd('2020-04-17'), 
+           y=29000, yend=7000, colour='skyblue', size=0.5, 
+           arrow=arrow(length=unit(0.2, 'cm'))) +
+  geom_text(x=ymd('2020-04-17'), y=35000, 
+            label='Death toll rectified\n on 17 Apr',
             color='skyblue', size=2)
   
 plot2 <- p + scale_y_continuous(trans='log10') +
   labs(title=paste0('Number of Cases (log scale) - ', max.date.txt)) 
 
-## convert from wide to long format, for purpose of drawing a area plot
+## convert from wide to long format, for purpose of drawing an area plot
 data.long <- data %>% select(c(date, suspectedCount, 
                                currentConfirmedCount, curedCount, deadCount)) %>% 
   rename(Suspected=suspectedCount, Confimed=currentConfirmedCount, 
@@ -275,8 +289,13 @@ plot1 <- ggplot(data, aes(x=date, y=currentConfirmedCount)) +
 plot2 <- ggplot(data, aes(x=date, y=new.confirmed)) + 
   geom_point() + geom_smooth() +
   xlab('') + ylab('Count') + labs(title='Daily New Confirmed Cases') +
-  theme(axis.text.x = element_text(angle=45, hjust=1))
-  # +  ylim(0, 4500)
+  theme(axis.text.x = element_text(angle=45, hjust=1)) + 
+  annotate('segment', x=ymd('2020-03-01'), xend=ymd('2020-02-16'), 
+           y=14000, yend=14800, colour='skyblue', size=0.5, 
+           arrow=arrow(length=unit(0.2, 'cm'))) +
+  geom_text(x=ymd('2020-03-24'), y=12500, 
+            label='New criteria introduced \n and new Heads of \n Wuhan & Hubei started\n on 13 Feb',
+            color='skyblue', size=2.5)
 grid.arrange(plot1, plot2, ncol=2)
 ```
 
@@ -299,7 +318,13 @@ plot2 <- ggplot(data, aes(x=date, y=curedCount)) +
 plot3 <- ggplot(data, aes(x=date, y=new.dead))  + 
   geom_point() + geom_smooth()  +
   xlab('') + ylab('Count') + labs(title='Daily New Deaths') +
-  theme(axis.text.x = element_text(angle=45, hjust=1))
+  theme(axis.text.x = element_text(angle=45, hjust=1)) +
+  annotate('segment', x=ymd('2020-04-02'), xend=ymd('2020-04-14'), 
+           y=1150, yend=1250, colour='skyblue', size=0.5, 
+           arrow=arrow(length=unit(0.2, 'cm'))) +
+  geom_text(x=ymd('2020-03-15'), y=1130, 
+            label='Death toll rectified\n on 17 Apr',
+            color='skyblue', size=2.5)
 plot4 <- ggplot(data, aes(x=date, y=new.cured)) + 
   geom_point() + geom_smooth()  +
   xlab('') + ylab('Count') + labs(title='Daily New Cured Cases') +
