@@ -686,11 +686,11 @@ df %>% ggplot(aes(x=date, y=count, color=type)) +
 
 ## Countries with Highest Death Rates
 
-Below are a list of top 20 countries with the highest death rates out of countires having 1000+ confirmed cases. 
+Below are a list of top 20 countries with the highest death rates out of countires having 2000+ confirmed cases. 
 
 ```{r death-rate-top20}
 ## sort the latest data by death rate, and if tie, by confirmed
-df <- data %>% filter(date == max(date) & country != 'World' & confirmed >= 1000) %>% 
+df <- data %>% filter(date == max(date) & country != 'World' & confirmed >= 2000) %>% 
   select(country, confirmed, new.confirmed, current.confirmed,
          recovered, deaths, new.deaths, death.rate=rate.lower) %>%
   arrange(desc(death.rate, confirmed))
@@ -743,9 +743,9 @@ data.world %>%
 ## Appendix A.2 Latest Cases by Country {-}
 
 ```{r table-by-country}
-## hightlight high death rates (if >= 5%) for those countries with 1000+ confirmed cases
+## hightlight high death rates (if >= 5%) for those countries with 2000+ confirmed cases
 data.latest.all %>% arrange(desc(confirmed)) %>% select(-c(date, ranking)) %>%
-  mutate(death.rate=ifelse(confirmed >= 1000 & death.rate >= 5,
+  mutate(death.rate=ifelse(confirmed >= 2000 & death.rate >= 5,
                            cell_spec(format(death.rate, big.mark=',') %>% paste0('%'), 
                                      "latex", color="red", bold=T),
                            cell_spec(format(death.rate, big.mark=',') %>% paste0('%'), 
