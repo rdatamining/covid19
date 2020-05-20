@@ -395,9 +395,10 @@ plot1 <- ggplot(data.world, aes(x=date)) +
   theme(legend.position='bottom', legend.title=element_blank(),
         legend.text=element_text(size=8),
         legend.key.size=unit(0.5, 'cm'),
-        axis.text.x=element_text(angle=45, hjust=1))
+        axis.text.x=element_text(angle=45, hjust=1)) +
+  ylim(c(0, 99))
 ## focusing on last 2 weeks
-y.max <- data.world[n-(14:0), ] %>% select(rate.upper, rate.lower, rate.daily) %>% max()
+# y.max <- data.world[n-(14:0), ] %>% select(rate.upper, rate.lower, rate.daily) %>% max()
 plot2 <- ggplot(data.world[n-(14:0),], aes(x=date)) + 
   geom_line(aes(y=rate.upper, colour='Upper bound')) +
   geom_line(aes(y=rate.lower, colour='Lower bound')) +
@@ -407,7 +408,7 @@ plot2 <- ggplot(data.world[n-(14:0),], aes(x=date)) +
         legend.text=element_text(size=8),
         legend.key.size=unit(0.5, 'cm'),
         axis.text.x=element_text(angle=45, hjust=1)) +
-  ylim(c(0, y.max))
+  ylim(c(0, 25))
 grid.arrange(plot1, plot2, ncol=2)
 ```
 
@@ -439,11 +440,11 @@ top.countries <- data.latest.all %>% filter(ranking <= k + 1) %>%
 top.countries %>% setdiff('World') %>% print()
 
 ## add 'Others' 
-top.countries %<>% c('Others')
+# top.countries %<>% c('Others')
 ## put all others in a single group of 'Others'
 data.latest <- data.latest.all %>% filter(!is.na(country)) %>%
   mutate(country=ifelse(ranking <= k + 1, as.character(country), 'Others')) %>%
-  mutate(country=country %>% factor(levels=c(top.countries)))
+  mutate(country=country %>% factor(levels=c(top.countries, 'Others')))
 data.latest %<>% group_by(country) %>% 
   summarise(confirmed=sum(confirmed), new.confirmed=sum(new.confirmed), 
             current.confirmed=sum(current.confirmed),
@@ -509,7 +510,7 @@ data.latest.long %>% ggplot(aes(x=country, y=count, fill=country, group=country)
 # colors <- rep(c('grey', 'yellow', 'purple', 'orange', 'green', 'red', 'blue', 'black'), 3)
 linetypes <- rep(c("solid", "dashed", "dotted"), each=8)
 colors <- rep(c('black', 'blue', 'red', 'green', 'orange', 'purple', 'yellow', 'grey'), 3)
-df <- data %>% filter(country %in% setdiff(top.countries, c('World', 'Others'))) %>%
+df <- data %>% filter(country %in% setdiff(top.countries, c('World'))) %>%
   mutate(country=country %>% factor(levels=c(top.countries)))
 p <- df %>% ggplot(aes(x=confirmed, y=deaths, group=country)) + 
   geom_line(aes(color=country, linetype=country)) +
@@ -681,7 +682,7 @@ df %>% ggplot(aes(x=date, y=count, color=type)) +
         legend.text=element_text(size=8),
         legend.key.size=unit(0.5, 'cm'),
         axis.text.x=element_text(angle=45, hjust=1)) +
-  ylim(c(0, 100)) +
+  ylim(c(0, 99)) +
   facet_wrap(~country, ncol=4)
 ```
 

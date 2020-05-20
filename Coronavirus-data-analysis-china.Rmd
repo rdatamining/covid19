@@ -226,25 +226,25 @@ plot1 <- p + labs(title=paste0('Number of Cases - ', max.date.txt)) +
            arrow=arrow(length=unit(0.2, 'cm'))) +
   geom_text(x=ymd('2020-01-28'), y=35000, 
             label='Wuhan lockdown\n on 23 Jan',
-            color='skyblue', size=2) + 
+            color='skyblue', size=1.8) + 
   annotate('segment', x=ymd('2020-02-02'), xend=ymd('2020-02-11'), 
            y=64000, yend=52000, colour='skyblue', size=0.5, 
            arrow=arrow(length=unit(0.2, 'cm'))) +
   geom_text(x=ymd('2020-02-01'), y=75000, 
             label='New criteria introduced \n and new Heads of \n Wuhan & Hubei started\n on 13 Feb',
-            color='skyblue', size=2) + 
+            color='skyblue', size=1.8) + 
   annotate('segment', x=ymd('2020-04-08'), xend=ymd('2020-04-08'), 
            y=14000, yend=6000, colour='skyblue', size=0.5, 
            arrow=arrow(length=unit(0.2, 'cm'))) +
   geom_text(x=ymd('2020-04-07'), y=20000, 
             label='Wuhan unlocked\n on 8 Apr',
-            color='skyblue', size=2) +
+            color='skyblue', size=1.8) +
   annotate('segment', x=ymd('2020-04-17'), xend=ymd('2020-04-17'), 
            y=29000, yend=7000, colour='skyblue', size=0.5, 
            arrow=arrow(length=unit(0.2, 'cm'))) +
   geom_text(x=ymd('2020-04-17'), y=35000, 
             label='Death toll rectified\n on 17 Apr',
-            color='skyblue', size=2)
+            color='skyblue', size=1.8)
   
 plot2 <- p + scale_y_continuous(trans='log10') +
   labs(title=paste0('Number of Cases (log scale) - ', max.date.txt)) 
@@ -295,7 +295,7 @@ plot2 <- ggplot(data, aes(x=date, y=new.confirmed)) +
            arrow=arrow(length=unit(0.2, 'cm'))) +
   geom_text(x=ymd('2020-03-24'), y=12500, 
             label='New criteria introduced \n and new Heads of \n Wuhan & Hubei started\n on 13 Feb',
-            color='skyblue', size=2.5)
+            color='skyblue', size=2)
 grid.arrange(plot1, plot2, ncol=2)
 ```
 

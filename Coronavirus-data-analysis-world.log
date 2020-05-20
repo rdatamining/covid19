@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.11.20)  8 MAY 2020 16:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.11.20)  20 MAY 2020 14:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -917,14 +917,14 @@ Graphic file (type pdf)
 Package pdftex.def Info: Coronavirus-data-analysis-world_files/figure-latex/plo
 ts-confirmed-1.pdf  used on input line 557.
 (pdftex.def)             Requested size: 459.74442pt x 191.72746pt.
-<Coronavirus-data-analysis-world_files/figure-latex/plots-2-1.pdf, id=276, 462.
-72874pt x 408.52625pt>
+<Coronavirus-data-analysis-world_files/figure-latex/plots-2-1.pdf, id=276, 464.
+73625pt x 408.52625pt>
 File: Coronavirus-data-analysis-world_files/figure-latex/plots-2-1.pdf Graphic 
 file (type pdf)
 <use Coronavirus-data-analysis-world_files/figure-latex/plots-2-1.pdf>
 Package pdftex.def Info: Coronavirus-data-analysis-world_files/figure-latex/plo
 ts-2-1.pdf  used on input line 595.
-(pdftex.def)             Requested size: 462.73466pt x 408.53148pt.
+(pdftex.def)             Requested size: 464.74928pt x 408.53772pt.
 [9pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) 
 has been already used, duplicate ignored
 
@@ -937,7 +937,7 @@ re.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.637 \end{Shaded}
+l.638 \end{Shaded}
                    <./Coronavirus-data-analysis-world_files/figure-latex/plots-
 2-1.pdf>]
 <Coronavirus-data-analysis-world_files/figure-latex/plots-deaths-1.pdf, id=313,
@@ -946,21 +946,21 @@ File: Coronavirus-data-analysis-world_files/figure-latex/plots-deaths-1.pdf Gra
 phic file (type pdf)
 <use Coronavirus-data-analysis-world_files/figure-latex/plots-deaths-1.pdf>
 Package pdftex.def Info: Coronavirus-data-analysis-world_files/figure-latex/plo
-ts-deaths-1.pdf  used on input line 641.
+ts-deaths-1.pdf  used on input line 642.
 (pdftex.def)             Requested size: 463.73842pt x 201.75632pt.
 [11pdfTeX warning (ext4): destination with the same identifier (name{figure.5})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.664 \begin{Shaded}
+l.665 \begin{Shaded}
                      <./Coronavirus-data-analysis-world_files/figure-latex/plot
 s-deaths-1.pdf>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \vbox (badness 8113) detected at line 782
+Underfull \vbox (badness 8113) detected at line 783
  []
 
 [12]
@@ -971,14 +971,14 @@ df Graphic file (type pdf)
 <use Coronavirus-data-analysis-world_files/figure-latex/plot-top-countires-1.pd
 f>
 Package pdftex.def Info: Coronavirus-data-analysis-world_files/figure-latex/plo
-t-top-countires-1.pdf  used on input line 786.
+t-top-countires-1.pdf  used on input line 787.
 (pdftex.def)             Requested size: 415.54541pt x 650.4596pt.
 [13pdfTeX warning (ext4): destination with the same identifier (name{table.3}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.792 
+l.793 
       ]
 Overfull \vbox (23.97401pt too high) has occurred while \output is active []
 
@@ -987,7 +987,7 @@ Overfull \vbox (23.97401pt too high) has occurred while \output is active []
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.792 
+l.793 
        <./Coronavirus-data-analysis-world_files/figure-latex/plot-top-countires
 -1.pdf>]
 <Coronavirus-data-analysis-world_files/figure-latex/line-top20-1.pdf, id=349, 4
@@ -996,7 +996,7 @@ File: Coronavirus-data-analysis-world_files/figure-latex/line-top20-1.pdf Graph
 ic file (type pdf)
 <use Coronavirus-data-analysis-world_files/figure-latex/line-top20-1.pdf>
 Package pdftex.def Info: Coronavirus-data-analysis-world_files/figure-latex/lin
-e-top20-1.pdf  used on input line 816.
+e-top20-1.pdf  used on input line 817.
 (pdftex.def)             Requested size: 457.72984pt x 316.19493pt.
 <Coronavirus-data-analysis-world_files/figure-latex/line-top20-2.pdf, id=350, 4
 57.71pt x 316.18124pt>
@@ -1004,10 +1004,10 @@ File: Coronavirus-data-analysis-world_files/figure-latex/line-top20-2.pdf Graph
 ic file (type pdf)
 <use Coronavirus-data-analysis-world_files/figure-latex/line-top20-2.pdf>
 Package pdftex.def Info: Coronavirus-data-analysis-world_files/figure-latex/lin
-e-top20-2.pdf  used on input line 825.
+e-top20-2.pdf  used on input line 826.
 (pdftex.def)             Requested size: 457.72984pt x 316.19493pt.
 [15 <./Coronavirus-data-analysis-world_files/figure-latex/line-top20-1.pdf>]
-Underfull \vbox (badness 10000) detected at line 857
+Underfull \vbox (badness 10000) detected at line 858
  []
 
 [16 <./Coronavirus-data-analysis-world_files/figure-latex/line-top20-2.pdf>]
@@ -1017,14 +1017,14 @@ File: Coronavirus-data-analysis-world_files/figure-latex/circle-top20-1.pdf Gra
 phic file (type pdf)
 <use Coronavirus-data-analysis-world_files/figure-latex/circle-top20-1.pdf>
 Package pdftex.def Info: Coronavirus-data-analysis-world_files/figure-latex/cir
-cle-top20-1.pdf  used on input line 861.
+cle-top20-1.pdf  used on input line 862.
 (pdftex.def)             Requested size: 469.76303pt x 532.23152pt.
 [17pdfTeX warning (ext4): destination with the same identifier (name{figure.7})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.873 \begin{Shaded}
+l.874 \begin{Shaded}
                      <./Coronavirus-data-analysis-world_files/figure-latex/circ
 le-top20-1.pdf>]
 <Coronavirus-data-analysis-world_files/figure-latex/plot-by-type-1.pdf, id=390,
@@ -1033,14 +1033,14 @@ File: Coronavirus-data-analysis-world_files/figure-latex/plot-by-type-1.pdf Gra
 phic file (type pdf)
 <use Coronavirus-data-analysis-world_files/figure-latex/plot-by-type-1.pdf>
 Package pdftex.def Info: Coronavirus-data-analysis-world_files/figure-latex/plo
-t-by-type-1.pdf  used on input line 907.
+t-by-type-1.pdf  used on input line 908.
 (pdftex.def)             Requested size: 469.75067pt x 582.99411pt.
 [18] [19pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.8}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.928 \end{Shaded}
+l.929 \end{Shaded}
                    <./Coronavirus-data-analysis-world_files/figure-latex/plot-b
 y-type-1.pdf>]
 <Coronavirus-data-analysis-world_files/figure-latex/plot-by-type-2-1.pdf, id=40
@@ -1049,14 +1049,14 @@ File: Coronavirus-data-analysis-world_files/figure-latex/plot-by-type-2-1.pdf G
 raphic file (type pdf)
 <use Coronavirus-data-analysis-world_files/figure-latex/plot-by-type-2-1.pdf>
 Package pdftex.def Info: Coronavirus-data-analysis-world_files/figure-latex/plo
-t-by-type-2-1.pdf  used on input line 932.
+t-by-type-2-1.pdf  used on input line 933.
 (pdftex.def)             Requested size: 469.75067pt x 281.01155pt.
 [20pdfTeX warning (ext4): destination with the same identifier (name{figure.9})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.967 \end{Shaded}
+l.968 \end{Shaded}
                    <./Coronavirus-data-analysis-world_files/figure-latex/plot-b
 y-type-2-1.pdf>]
 <Coronavirus-data-analysis-world_files/figure-latex/plot-by-country-1.pdf, id=4
@@ -1065,16 +1065,16 @@ File: Coronavirus-data-analysis-world_files/figure-latex/plot-by-country-1.pdf
 Graphic file (type pdf)
 <use Coronavirus-data-analysis-world_files/figure-latex/plot-by-country-1.pdf>
 Package pdftex.def Info: Coronavirus-data-analysis-world_files/figure-latex/plo
-t-by-country-1.pdf  used on input line 971.
+t-by-country-1.pdf  used on input line 972.
 (pdftex.def)             Requested size: 469.77385pt x 586.17801pt.
 [21] [22pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.10}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.999 \end{Shaded}
-                   <./Coronavirus-data-analysis-world_files/figure-latex/plot-b
-y-country-1.pdf>]
+l.1000 \end{Shaded}
+                    <./Coronavirus-data-analysis-world_files/figure-latex/plot-
+by-country-1.pdf>]
 <Coronavirus-data-analysis-world_files/figure-latex/plot-by-country-log-1.pdf, 
 id=442, 567.11874pt x 707.64375pt>
 File: Coronavirus-data-analysis-world_files/figure-latex/plot-by-country-log-1.
@@ -1082,14 +1082,14 @@ pdf Graphic file (type pdf)
 <use Coronavirus-data-analysis-world_files/figure-latex/plot-by-country-log-1.p
 df>
 Package pdftex.def Info: Coronavirus-data-analysis-world_files/figure-latex/plo
-t-by-country-log-1.pdf  used on input line 1003.
+t-by-country-log-1.pdf  used on input line 1004.
 (pdftex.def)             Requested size: 469.77385pt x 586.17801pt.
 [23] [24pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.11}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1010 \begin{Shaded}
+l.1011 \begin{Shaded}
                       <./Coronavirus-data-analysis-world_files/figure-latex/plo
 t-by-country-log-1.pdf>]
 <Coronavirus-data-analysis-world_files/figure-latex/plot-deaths-all-1.pdf, id=4
@@ -1098,7 +1098,7 @@ File: Coronavirus-data-analysis-world_files/figure-latex/plot-deaths-all-1.pdf
 Graphic file (type pdf)
 <use Coronavirus-data-analysis-world_files/figure-latex/plot-deaths-all-1.pdf>
 Package pdftex.def Info: Coronavirus-data-analysis-world_files/figure-latex/plo
-t-deaths-all-1.pdf  used on input line 1043.
+t-deaths-all-1.pdf  used on input line 1044.
 (pdftex.def)             Requested size: 426.24281pt x 650.43549pt.
 [25]
 Overfull \vbox (23.9499pt too high) has occurred while \output is active []
@@ -1108,91 +1108,96 @@ Overfull \vbox (23.9499pt too high) has occurred while \output is active []
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1049 
+l.1050 
         <./Coronavirus-data-analysis-world_files/figure-latex/plot-deaths-all-1
-.pdf>] [27pdfTeX warning (ext4): destination with the same identifier (name{tab
-le.4}) has been already used, duplicate ignored
+.pdf>]
+Overfull \hbox (5.40668pt too wide) in paragraph at lines 1078--1107
+ [][] 
+ []
+
+[27pdfTeX warning (ext4): destination with the same identifier (name{table.4}) 
+has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1140 \end{Shaded}
+l.1141 \end{Shaded}
                    ] [28]
-Overfull \hbox (15.40218pt too wide) in alignment at lines 1313--1318
+Overfull \hbox (15.40218pt too wide) in alignment at lines 1328--1333
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (15.40218pt too wide) in alignment at lines 1318--1323
+Overfull \hbox (15.40218pt too wide) in alignment at lines 1333--1338
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (15.40218pt too wide) in alignment at lines 1323--1325
+Overfull \hbox (15.40218pt too wide) in alignment at lines 1338--1340
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (15.40218pt too wide) in alignment at lines 1325--1327
+Overfull \hbox (15.40218pt too wide) in alignment at lines 1340--1342
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (15.40218pt too wide) in alignment at lines 1327--1351
+Overfull \hbox (15.40218pt too wide) in alignment at lines 1342--1366
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (15.40218pt too wide) in alignment at lines 1351--1375
+Overfull \hbox (15.40218pt too wide) in alignment at lines 1366--1390
  [] [] [] [] [] [] [] [] [] 
  []
 
 [29]
-Overfull \hbox (15.40218pt too wide) in alignment at lines 1375--1399
+Overfull \hbox (15.40218pt too wide) in alignment at lines 1390--1414
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (15.40218pt too wide) in alignment at lines 1399--1423
+Overfull \hbox (15.40218pt too wide) in alignment at lines 1414--1438
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (15.40218pt too wide) in alignment at lines 1423--1447
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (15.40218pt too wide) in alignment at lines 1447--1471
+Overfull \hbox (15.40218pt too wide) in alignment at lines 1438--1462
  [] [] [] [] [] [] [] [] [] 
  []
 
 [30]
-Overfull \hbox (15.40218pt too wide) in alignment at lines 1471--1495
+Overfull \hbox (15.40218pt too wide) in alignment at lines 1462--1486
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (15.40218pt too wide) in alignment at lines 1495--1519
+Overfull \hbox (15.40218pt too wide) in alignment at lines 1486--1510
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (15.40218pt too wide) in alignment at lines 1519--1543
+Overfull \hbox (15.40218pt too wide) in alignment at lines 1510--1534
  [] [] [] [] [] [] [] [] [] 
  []
 
 [31]
-Overfull \hbox (15.40218pt too wide) in alignment at lines 1543--1553
+Overfull \hbox (15.40218pt too wide) in alignment at lines 1534--1558
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (15.40218pt too wide) in alignment at lines 1558--1569
  [] [] [] [] [] [] [] [] [] 
  []
 
 [32]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1589.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1605.
 [33]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1589.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1605.
 (./Coronavirus-data-analysis-world.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1589.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1589.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1605.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1605.
 
 Package rerunfilecheck Info: File `Coronavirus-data-analysis-world.out' has not
  changed.
@@ -1202,11 +1207,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 15090 strings out of 492639
- 223059 string characters out of 6129301
- 420964 words of memory out of 5000000
+ 15088 strings out of 492639
+ 223039 string characters out of 6129301
+ 421219 words of memory out of 5000000
  18528 multiletter control sequences out of 15000+600000
- 90479 words of font info for 112 fonts, out of 8000000 for 9000
+ 90396 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  39i,9n,39p,839b,488s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
@@ -1224,8 +1229,8 @@ lmri10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmri7.pfb>
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/loca
 l/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/
 2018/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on Coronavirus-data-analysis-world.pdf (33 pages, 978351 bytes).
-
+Output written on Coronavirus-data-analysis-world.pdf (33 pages, 1015768 bytes)
+.
 PDF statistics:
  607 PDF objects out of 1000 (max. 8388607)
  489 compressed objects within 5 object streams
