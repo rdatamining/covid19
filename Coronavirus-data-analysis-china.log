@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.11.20)  8 MAY 2020 16:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.11.20)  25 MAY 2020 16:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -658,6 +658,9 @@ Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
 
 LaTeX Warning: Label `tab:table' multiply defined.
 
+
+LaTeX Warning: Label `tab:table' multiply defined.
+
 )
 \openout1 = `Coronavirus-data-analysis-china.aux'.
 
@@ -911,7 +914,7 @@ Package pdftex.def Info: Coronavirus-data-analysis-china_files/figure-latex/plo
 ts-deaths-cured-1.pdf  used on input line 569.
 (pdftex.def)             Requested size: 459.74442pt x 408.55019pt.
 [9]
-Overfull \vbox (1.07883pt too high) detected at line 605
+Overfull \vbox (1.07883pt too high) detected at line 606
  []
 
 [10pdfTeX warning (ext4): destination with the same identifier (name{figure.3})
@@ -919,7 +922,7 @@ Overfull \vbox (1.07883pt too high) detected at line 605
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.605 \end{Shaded}
+l.606 \end{Shaded}
                    <./Coronavirus-data-analysis-china_files/figure-latex/plots-
 deaths-cured-1.pdf>]
 <Coronavirus-data-analysis-china_files/figure-latex/plots-deaths-1.pdf, id=227,
@@ -928,72 +931,77 @@ File: Coronavirus-data-analysis-china_files/figure-latex/plots-deaths-1.pdf Gra
 phic file (type pdf)
 <use Coronavirus-data-analysis-china_files/figure-latex/plots-deaths-1.pdf>
 Package pdftex.def Info: Coronavirus-data-analysis-china_files/figure-latex/plo
-ts-deaths-1.pdf  used on input line 609.
+ts-deaths-1.pdf  used on input line 610.
 (pdftex.def)             Requested size: 467.76775pt x 237.89903pt.
 [11pdfTeX warning (ext4): destination with the same identifier (name{figure.4})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.653 \end{Shaded}
+l.654 \end{Shaded}
                    <./Coronavirus-data-analysis-china_files/figure-latex/plots-
 deaths-1.pdf>]
-Overfull \hbox (25.43526pt too wide) in alignment at lines 657--662
+Overfull \hbox (25.43526pt too wide) in alignment at lines 658--663
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (25.43526pt too wide) in alignment at lines 662--667
+Overfull \hbox (25.43526pt too wide) in alignment at lines 663--668
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (25.43526pt too wide) in alignment at lines 667--669
+Overfull \hbox (25.43526pt too wide) in alignment at lines 668--670
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (25.43526pt too wide) in alignment at lines 669--671
+Overfull \hbox (25.43526pt too wide) in alignment at lines 670--672
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (25.43526pt too wide) in alignment at lines 671--695
+Overfull \hbox (25.43526pt too wide) in alignment at lines 672--696
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (25.43526pt too wide) in alignment at lines 695--719
+Overfull \hbox (25.43526pt too wide) in alignment at lines 696--720
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (25.43526pt too wide) in alignment at lines 719--743
+Overfull \hbox (25.43526pt too wide) in alignment at lines 720--744
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (25.43526pt too wide) in alignment at lines 743--767
+Overfull \hbox (25.43526pt too wide) in alignment at lines 744--768
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [12]
-Overfull \hbox (25.43526pt too wide) in alignment at lines 767--791
+Overfull \hbox (25.43526pt too wide) in alignment at lines 768--792
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (25.43526pt too wide) in alignment at lines 791--799
+Overfull \hbox (25.43526pt too wide) in alignment at lines 792--816
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (25.43526pt too wide) in alignment at lines 816--819
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [13]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 835.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 855.
 [14]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 835.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 855.
 (./Coronavirus-data-analysis-china.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 835.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 835.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 855.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 855.
 Package rerunfilecheck Info: File `Coronavirus-data-analysis-china.out' has not
  changed.
 (rerunfilecheck)             Checksum: C8DDA86726B70776E9BD9D318F9D581F;2747.
@@ -1004,7 +1012,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  14995 strings out of 492639
  219344 string characters out of 6129301
- 405227 words of memory out of 5000000
+ 405076 words of memory out of 5000000
  18495 multiletter control sequences out of 15000+600000
  94491 words of font info for 116 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1024,7 +1032,7 @@ lmri10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmri7.pfb>
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/loca
 l/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/
 2018/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on Coronavirus-data-analysis-china.pdf (14 pages, 494107 bytes).
+Output written on Coronavirus-data-analysis-china.pdf (14 pages, 502690 bytes).
 
 PDF statistics:
  336 PDF objects out of 1000 (max. 8388607)
