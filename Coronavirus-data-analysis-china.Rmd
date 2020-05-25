@@ -338,7 +338,9 @@ grid.arrange(plot1, plot2, plot3, plot4, nrow=2)
 
 Figure \@ref(fig:plots-deaths) shows death rates caculated in three different ways (see Section \@ref(death-rates) for details). The left chart shows the death rates from `r min.date.txt` to `r max.date.txt` and the right one is a zoom-in view of the rates in last two weeks.
 
-In the right chart, the upper bound (in blue) is decreasing, as there will be more cured cases and fewer deaths daily as time goes on. However, the lower bound (in green) keeps going up, as there are and will be new deaths from the current confirmed cases. Therefore, the final death rate is expected to be in-between of those two rates, and based on the latest data as of `r max.date.txt`, it will be between `r data$rate.lower[n]`% and `r data$rate.upper[n]`% (see the last row in the table at the end of this report).
+In the right chart, the upper bound (in blue) is decreasing, as there will be more cured cases and fewer deaths daily as time goes on. However, the lower bound (in green) keeps going up, as there are and will be new deaths from the current confirmed cases. Therefore, the final death rate is expected to be in-between of those two rates, and based on the latest data as of `r max.date.txt`, it will be around `r data$rate.lower[n]`%
+<!-- between `r data$rate.lower[n]`% and `r data$rate.upper[n]`%  -->
+(see the last row in the table at the end of this report).
 
 ```{r plots-deaths, fig.height=3.5, fig.cap='Death Rate'}
 ## three death rates

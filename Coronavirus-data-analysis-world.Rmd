@@ -383,7 +383,7 @@ Figure \@ref(fig:plots-deaths) shows death rates caculated in three different wa
 
 In the right chart, the upper bound (in blue) is decreasing, as there will be more recovered cases and fewer dead ones daily as time goes on. However, the lower bound (in green) keeps going up, as there are and will be new deaths from the current confirmed cases. Therefore, the final death rate is expected to be in-between of those two rates, and based on the latest data retrieved as of `r max.date.txt` UTC, it will be between `r data.world$rate.lower[n]`% and `r data.world$rate.upper[n]`%.
 
-A surge in the daily death rate (in red) suggests that the situlation is changing dramatically (actually, getting worse) and that above lower/upper bounds are likely to increase shortly. A likely reason of that surge is the outbreak of coronavirus in Iran, European and US.
+A surge in the daily death rate (in red) in late March suggests that the situlation is changing dramatically (actually, getting worse) and that above lower/upper bounds are likely to increase shortly. A likely reason of that surge is the outbreak of coronavirus in Iran, Europe and US.
 
 ```{r plots-deaths, fig.height=3, fig.cap='Death Rate'}
 ## three death rates
@@ -408,7 +408,7 @@ plot2 <- ggplot(data.world[n-(14:0),], aes(x=date)) +
         legend.text=element_text(size=8),
         legend.key.size=unit(0.5, 'cm'),
         axis.text.x=element_text(angle=45, hjust=1)) +
-  ylim(c(0, 25))
+  ylim(c(0, 20))
 grid.arrange(plot1, plot2, ncol=2)
 ```
 
@@ -639,6 +639,8 @@ df %>% filter(country != 'World' & type != 'Total Confirmed') %>%
 ```
 
 
+
+
 ```{r plot-by-country-log, fig.height=10, fig.width=8, out.width='\\textwidth', fig.cap='COVID-19 Cases Top 20 Countries (log scale). Ordered descendingly by number of confirmed cases.'}
 ## cases by country - line plot - log scale
 p <- df %>% filter(country != 'World') %>% 
@@ -664,7 +666,7 @@ p + facet_wrap(~country, ncol=4, scales='free_y')
 ```
 
 
-Figures \@ref(fig:plot-by-country) and \@ref(fig:plot-by-country-log) show that the coronavirus seems to be under control in China, with an increase of recovered cases (in green) every day and a shrinking of the current confrimed cases (in red). However, in the rest of the world (i.e., outside of China), the confirmed cases are surging up in many other countries, which suggests that the virus has broken out there.
+Figures \@ref(fig:plot-by-country) and \@ref(fig:plot-by-country-log) show that China has entered a post-epidemic phase, followed by Australia and Germany, with an increase of recovered cases (in green) every day and a shrinking of the current confirmed cases (in red). In contrast, there are sharp surges in Russia, South America (incl. Brazil, Peru, Chile and Mexico) and West/South Asia (incl. Saudi Arabia, India and Pakistan), which suggests that the virus spread is accerelating there.
 
 
 
