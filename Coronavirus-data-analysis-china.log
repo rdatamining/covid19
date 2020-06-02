@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.11.20)  25 MAY 2020 16:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.11.20)  2 JUN 2020 16:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -991,17 +991,17 @@ Overfull \hbox (25.43526pt too wide) in alignment at lines 792--816
  []
 
 
-Overfull \hbox (25.43526pt too wide) in alignment at lines 816--819
+Overfull \hbox (25.43526pt too wide) in alignment at lines 816--828
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [13]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 855.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 864.
 [14]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 855.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 864.
 (./Coronavirus-data-analysis-china.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 855.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 855.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 864.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 864.
 Package rerunfilecheck Info: File `Coronavirus-data-analysis-china.out' has not
  changed.
 (rerunfilecheck)             Checksum: C8DDA86726B70776E9BD9D318F9D581F;2747.
@@ -1012,7 +1012,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  14995 strings out of 492639
  219344 string characters out of 6129301
- 405076 words of memory out of 5000000
+ 406010 words of memory out of 5000000
  18495 multiletter control sequences out of 15000+600000
  94491 words of font info for 116 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1032,7 +1032,7 @@ lmri10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmri7.pfb>
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/loca
 l/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/
 2018/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on Coronavirus-data-analysis-china.pdf (14 pages, 502690 bytes).
+Output written on Coronavirus-data-analysis-china.pdf (14 pages, 507493 bytes).
 
 PDF statistics:
  336 PDF objects out of 1000 (max. 8388607)
