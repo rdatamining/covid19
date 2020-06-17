@@ -200,7 +200,7 @@ After tidying up the data, we visualise it with various charts.
 
 ## Number of Cases
 
-Figure \@ref(fig:plots-cases) shows the number of COVID-19 cases in China. The line and area plots show the numbers of dead, cured, current confirmed and suppected cases. Note that, in the area plot, the total number of confirmed cases is represented by the total areas of confirmed, cured and deaths.
+Figure \@ref(fig:plots-cases) shows the number of COVID-19 cases in China. The line and area plots show the numbers of dead, cured, current confirmed and suppected cases. Note that, in the area plot, the total number of confirmed cases is represented by the total areas of confirmed, cured and deaths. 
 
 ```{r plots-cases, fig.height=9, fig.cap='Numbers of COVID-19 Cases'}
 # total/current confirmed cases
@@ -246,8 +246,15 @@ plot1 <- p + labs(title=paste0('Number of Cases - ', max.date.txt)) +
             label='Death toll rectified\n on 17 Apr',
             color='skyblue', size=1.8)
   
-plot2 <- p + scale_y_continuous(trans='log10') +
-  labs(title=paste0('Number of Cases (log scale) - ', max.date.txt)) 
+plot2 <- p +
+  labs(title=paste0('Number of Cases (log scale) - ', max.date.txt)) +
+  annotate('segment', x=ymd('2020-06-10'), xend=ymd('2020-06-14'), 
+           y=500, yend=300, colour='skyblue', size=0.5, 
+           arrow=arrow(length=unit(0.2, 'cm'))) +
+  geom_text(aes(x=ymd('2020-05-28'), y=600), 
+            label='New cases in Beijing\n started on 11 Jun',
+            color='skyblue', size=1.8) + 
+  scale_y_log10()
 
 ## convert from wide to long format, for purpose of drawing an area plot
 data.long <- data %>% select(c(date, suspectedCount, 
@@ -272,8 +279,10 @@ grid.arrange(plot1, plot2, plot3, ncol=1)
 Figure \@ref(fig:plots-cases) (based on official stats) shows that the coronavirus seems to be contained in China, in that
 
 - there are a lot of recovered cases (in green) every day,
-- the remaining confrimed cases (in red) are shrinking significantly, and
-- suspected cases (in orange) are almost gone.
+- the remaining confrimed cases (in red) are shrinking significantly, 
+- suspected cases (in orange) are almost gone, and
+
+However, the second chart above shows that there have been new cases in Beijing starting on 11 June 2020.
 
 
 ## Current (or Remaining) Confirmed Cases
