@@ -31,7 +31,7 @@ library(leaflet) # map
 
 # Introduction
 
-This is an analysis report of the Novel Coronavirus (COVID-19) around the world, to demonstrate data processing and visualisation with R, *tidyverse* and *ggplot2.* This report will be updated from time to time, with new data and more analysis. Please find its latest version at http://www.rdatamining.com/docs/Coronavirus-data-analysis-world.pdf.
+This is an analysis report of the Novel Coronavirus (COVID-19) around the world, to demonstrate data processing and visualisation with R, *tidyverse* and *ggplot2*. This report will be updated from time to time, with new data and more analysis. Please find its latest version at http://www.rdatamining.com/docs/Coronavirus-data-analysis-world.pdf.
 
 A similar COVID-19 analysis report for China is available at http://www.rdatamining.com/docs/Coronavirus-data-analysis-china.pdf, if you are particually interested what has happened in China.
 
@@ -611,12 +611,17 @@ p + geom_area(aes(fill=country)) +
 
 
 ```{r plot-by-country, fig.height=10, fig.width=8, out.width='\\textwidth', fig.cap='COVID-19 Cases in Top 20 Countries. Ordered descendingly by number of confirmed cases.'}
-## if Australia in not in top 20, add it in and remove 'Others'
+## remove 'Others'
+top.countries %<>% setdiff('Others')
+## if China or Australia not in top 20, add them in 
+if(!('China' %in% top.countries)) {
+  top.countries %<>% c('China') 
+}
 if(!('Australia' %in% top.countries)) {
-  top.countries %<>% setdiff('Others') %>% c('Australia')
-  df <- data.long %>% filter(country %in% top.countries) %<>%
-    mutate(country=country %>% factor(levels=c(top.countries)))
-} 
+  top.countries %<>% c('Australia')
+}
+df <- data.long %>% filter(country %in% top.countries) %<>%
+  mutate(country=country %>% factor(levels=c(top.countries)))
 
 ## cases by country - area plot
 df %>% filter(country != 'World' & type != 'Total Confirmed') %>% 
