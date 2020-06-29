@@ -381,7 +381,7 @@ grid.arrange(plot1, plot2, plot3, plot4, nrow=2)
 
 Figure \@ref(fig:plots-deaths) shows death rates caculated in three different ways (see Section \@ref(death-rates) for details). The left chart shows the death rates from `r min.date.txt` to `r max.date.txt` and the right one is a zoom-in view of the rates in last two weeks.
 
-In the right chart, the upper bound (in blue) is decreasing, as there will be more recovered cases and fewer dead ones daily as time goes on. However, the lower bound (in green) keeps going up, as there are and will be new deaths from the current confirmed cases. Therefore, the final death rate is expected to be in-between of those two rates, and based on the latest data retrieved as of `r max.date.txt` UTC, it will be between `r data.world$rate.lower[n]`% and `r data.world$rate.upper[n]`%.
+In the right chart, the upper bound (in blue) is decreasing, as there will be more recovered cases and fewer dead ones daily as time goes on. However, the lower bound (in green) keeps going up, as there are and will be new deaths from the current confirmed cases. Therefore, the final death rate is expected to be in-between of those two rates, and based on the latest data retrieved as of `r max.date.txt`, it will be between `r data.world$rate.lower[n]`% and `r data.world$rate.upper[n]`%.
 
 A surge in the daily death rate (in red) in late March suggests that the situlation is changing dramatically (actually, getting worse) and that above lower/upper bounds are likely to increase shortly. A likely reason of that surge is the outbreak of coronavirus in Iran, Europe and US.
 
