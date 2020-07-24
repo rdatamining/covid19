@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.11.20)  29 JUN 2020 15:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.11.20)  24 JUL 2020 15:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -863,7 +863,7 @@ LaTeX Font Info:    Try loading font information for TS1+lmtt on input line 173
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [2]
-Overfull \hbox (6.5531pt too wide) in paragraph at lines 215--232
+Overfull \hbox (13.3591pt too wide) in paragraph at lines 215--232
  [][] 
  []
 
@@ -920,14 +920,14 @@ Graphic file (type pdf)
 Package pdftex.def Info: Coronavirus-data-analysis-world_files/figure-latex/plo
 ts-confirmed-1.pdf  used on input line 557.
 (pdftex.def)             Requested size: 459.74442pt x 191.72746pt.
-<Coronavirus-data-analysis-world_files/figure-latex/plots-2-1.pdf, id=276, 462.
-72874pt x 408.52625pt>
+<Coronavirus-data-analysis-world_files/figure-latex/plots-2-1.pdf, id=276, 464.
+73625pt x 408.52625pt>
 File: Coronavirus-data-analysis-world_files/figure-latex/plots-2-1.pdf Graphic 
 file (type pdf)
 <use Coronavirus-data-analysis-world_files/figure-latex/plots-2-1.pdf>
 Package pdftex.def Info: Coronavirus-data-analysis-world_files/figure-latex/plo
 ts-2-1.pdf  used on input line 595.
-(pdftex.def)             Requested size: 462.73466pt x 408.53148pt.
+(pdftex.def)             Requested size: 464.74928pt x 408.53772pt.
 [9pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) 
 has been already used, duplicate ignored
 
@@ -1096,13 +1096,13 @@ l.1016 \begin{Shaded}
                       <./Coronavirus-data-analysis-world_files/figure-latex/plo
 t-by-country-log-1.pdf>]
 <Coronavirus-data-analysis-world_files/figure-latex/plot-deaths-all-1.pdf, id=4
-61, 464.73625pt x 707.64375pt>
+61, 463.7325pt x 707.64375pt>
 File: Coronavirus-data-analysis-world_files/figure-latex/plot-deaths-all-1.pdf 
 Graphic file (type pdf)
 <use Coronavirus-data-analysis-world_files/figure-latex/plot-deaths-all-1.pdf>
 Package pdftex.def Info: Coronavirus-data-analysis-world_files/figure-latex/plo
 t-deaths-all-1.pdf  used on input line 1049.
-(pdftex.def)             Requested size: 427.16542pt x 650.43549pt.
+(pdftex.def)             Requested size: 426.24281pt x 650.43549pt.
 [25]
 Overfull \vbox (23.9499pt too high) has occurred while \output is active []
 
@@ -1120,82 +1120,81 @@ le.4}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.1146 \end{Shaded}
                    ] [28] [29]
-Overfull \hbox (17.5134pt too wide) in alignment at lines 1381--1386
+Overfull \hbox (17.5134pt too wide) in alignment at lines 1411--1416
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.5134pt too wide) in alignment at lines 1386--1391
+Overfull \hbox (17.5134pt too wide) in alignment at lines 1416--1421
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.5134pt too wide) in alignment at lines 1391--1393
+Overfull \hbox (17.5134pt too wide) in alignment at lines 1421--1423
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.5134pt too wide) in alignment at lines 1393--1395
+Overfull \hbox (17.5134pt too wide) in alignment at lines 1423--1425
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.5134pt too wide) in alignment at lines 1395--1419
+Overfull \hbox (17.5134pt too wide) in alignment at lines 1425--1449
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.5134pt too wide) in alignment at lines 1419--1443
+Overfull \hbox (17.5134pt too wide) in alignment at lines 1449--1473
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.5134pt too wide) in alignment at lines 1443--1467
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (17.5134pt too wide) in alignment at lines 1467--1491
+Overfull \hbox (17.5134pt too wide) in alignment at lines 1473--1497
  [] [] [] [] [] [] [] [] [] 
  []
 
 [30]
-Overfull \hbox (17.5134pt too wide) in alignment at lines 1491--1515
+Overfull \hbox (17.5134pt too wide) in alignment at lines 1497--1521
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.5134pt too wide) in alignment at lines 1515--1539
+Overfull \hbox (17.5134pt too wide) in alignment at lines 1521--1545
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.5134pt too wide) in alignment at lines 1539--1563
+Overfull \hbox (17.5134pt too wide) in alignment at lines 1545--1569
  [] [] [] [] [] [] [] [] [] 
  []
 
 [31]
-Overfull \hbox (17.5134pt too wide) in alignment at lines 1563--1587
+Overfull \hbox (17.5134pt too wide) in alignment at lines 1569--1593
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.5134pt too wide) in alignment at lines 1587--1611
+Overfull \hbox (17.5134pt too wide) in alignment at lines 1593--1617
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.5134pt too wide) in alignment at lines 1611--1622
+Overfull \hbox (17.5134pt too wide) in alignment at lines 1617--1641
  [] [] [] [] [] [] [] [] [] 
  []
 
 [32]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1658.
-[33]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1658.
+Overfull \hbox (17.5134pt too wide) in alignment at lines 1641--1652
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1688.
+[33] [34]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1688.
 (./Coronavirus-data-analysis-world.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1658.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1658.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1688.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1688.
 
 Package rerunfilecheck Info: File `Coronavirus-data-analysis-world.out' has not
  changed.
@@ -1205,11 +1204,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 15092 strings out of 492639
- 223083 string characters out of 6129301
- 421875 words of memory out of 5000000
+ 15089 strings out of 492639
+ 223048 string characters out of 6129301
+ 431030 words of memory out of 5000000
  18528 multiletter control sequences out of 15000+600000
- 90562 words of font info for 113 fonts, out of 8000000 for 9000
+ 90396 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  39i,9n,39p,839b,488s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
@@ -1227,11 +1226,11 @@ lmri10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmri7.pfb>
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/loca
 l/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/
 2018/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on Coronavirus-data-analysis-world.pdf (33 pages, 1150165 bytes)
+Output written on Coronavirus-data-analysis-world.pdf (34 pages, 1221671 bytes)
 .
 PDF statistics:
- 607 PDF objects out of 1000 (max. 8388607)
- 489 compressed objects within 5 object streams
- 106 named destinations out of 1000 (max. 500000)
+ 611 PDF objects out of 1000 (max. 8388607)
+ 492 compressed objects within 5 object streams
+ 107 named destinations out of 1000 (max. 500000)
  14607 words of extra memory for PDF output out of 17280 (max. 10000000)
 
