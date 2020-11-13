@@ -96,7 +96,7 @@ Below we check the time frame of the data.
 ```{r timeframe}
 n.col <- ncol(raw.data.confirmed)
 ## get dates from column names
-dates <- names(raw.data.confirmed)[5:n.col] %>% substr(2,8) %>% mdy()
+dates <- names(raw.data.confirmed)[5:n.col] %>% str_replace('X', '') %>% mdy()
 range(dates)
 min.date <- min(dates)
 max.date <- max(dates)
@@ -125,7 +125,7 @@ cleanData <- function(data) {
   ## convert from wide to long format
   data %<>% gather(key=date, value=count, -country)
   ## convert from character to date
-  data %<>% mutate(date = date %>% substr(2,8) %>% mdy())
+  data %<>% mutate(date = date %>% str_replace('X', '') %>% mdy())
   ## aggregate by country
   data %<>% group_by(country, date) %>% summarise(count=sum(count, na.rm=T)) %>% as.data.frame()
   return(data)
@@ -697,7 +697,7 @@ df %>% ggplot(aes(x=date, y=count, color=type)) +
 
 ## Countries with Highest Death Rates
 
-Below are a list of top 20 countries with the highest death rates out of countires having 2000+ confirmed cases. 
+Below are a list of top 20 countries with the highest death rates out of countries having 2000+ confirmed cases. 
 
 ```{r death-rate-top20}
 ## sort the latest data by death rate, and if tie, by confirmed
