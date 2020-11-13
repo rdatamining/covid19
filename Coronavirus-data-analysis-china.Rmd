@@ -129,7 +129,7 @@ After that, the daily increases of death and cured cases and the death rates are
 1) there were much more deaths than cured cases when the coronavirus broke out and when it was not contained, and 
 2) the daily number of death will decrease and that of the cured will increase as it becomes contained and more effective measures and treatments are used. 
 
-`rate.lower` is caculated with total deaths and confirmed cases. It is a lower bound of death rate, because there are and will be new deaths from the current confirmed cases. The final death rate is expected to be in between of the above two rates. 
+`rate.lower` is caculated with total deaths and confirmed cases. It is a lower bound of death rate, because there are and will be new deaths from the active confirmed cases. The final death rate is expected to be in between of the above two rates. 
 
 `rate.daily` is caculated with the daily deaths and cured cases and therefore is more volatile than the above two. However, it can give us a clue of the current situlation: whether it is very serious or is getting better.
 
@@ -200,14 +200,14 @@ After tidying up the data, we visualise it with various charts.
 
 ## Number of Cases
 
-Figure \@ref(fig:plots-cases) shows the number of COVID-19 cases in China. The line and area plots show the numbers of dead, cured, current confirmed and suppected cases. Note that, in the area plot, the total number of confirmed cases is represented by the total areas of confirmed, cured and deaths. 
+Figure \@ref(fig:plots-cases) shows the number of COVID-19 cases in China. The line and area plots show the numbers of dead, cured, active confirmed and suppected cases. Note that, in the area plot, the total number of confirmed cases is represented by the total areas of confirmed, cured and deaths. 
 
 ```{r plots-cases, fig.height=9, fig.cap='Numbers of COVID-19 Cases'}
-# total/current confirmed cases
+# total/active confirmed cases
 p <- ggplot(data, aes(x=date)) +
   geom_line(aes(y=suspectedCount, color='Suspected')) +
   geom_line(aes(y=confirmedCount, color='Total Confimed')) +
-  geom_line(aes(y=currentConfirmedCount, color='Current Confimed')) +
+  geom_line(aes(y=currentConfirmedCount, color='Active Confimed')) +
   geom_line(aes(y=curedCount, color='Cured')) +
   geom_line(aes(y=deadCount, color='Deaths')) +
   xlab('') + ylab('Count') +
@@ -215,7 +215,7 @@ p <- ggplot(data, aes(x=date)) +
   scale_color_manual(values = c(
     'Suspected' = 'orange',
     'Total Confimed' = 'purple',
-    'Current Confimed' = 'red',
+    'Active Confimed' = 'red',
     'Cured' = 'green',
     'Deaths' = 'black'))
 
@@ -285,15 +285,15 @@ Figure \@ref(fig:plots-cases) (based on official stats) shows that the coronavir
 However, the second chart above shows that there have been new cases in Beijing starting on 11 June 2020.
 
 
-## Current (or Remaining) Confirmed Cases
+## Active Confirmed Cases
 
-In the right chart of Figure \@ref(fig:plots-current-confirmed), there is a big spike of more than 15,000 new confirmed cases on 13 February 2020. The reasons are that Chinese government changed the criteria for confirmed cases and new measures were introduced by a new Head of Hubei Province and a new Head of Wuhan City, who replaced their predecessors on that day.
+In the right chart of Figure \@ref(fig:plots-active-confirmed), there is a big spike of more than 15,000 new confirmed cases on 13 February 2020. The reasons are that Chinese government changed the criteria for confirmed cases and new measures were introduced by a new Head of Hubei Province and a new Head of Wuhan City, who replaced their predecessors on that day.
 
-```{r plots-current-confirmed, fig.height=3, fig.cap='Current (or Remaining) Confirmed Cases'}
-## current confirmed and its increase
+```{r plots-active-confirmed, fig.height=3, fig.cap='Active Confirmed Cases'}
+## active confirmed and its increase
 plot1 <- ggplot(data, aes(x=date, y=currentConfirmedCount)) + 
   geom_point() + geom_smooth() +
-  xlab('') + ylab('Count') + labs(title='Current Confirmed Cases') +
+  xlab('') + ylab('Count') + labs(title='Active Confirmed Cases') +
   theme(axis.text.x = element_text(angle=45, hjust=1))
 plot2 <- ggplot(data, aes(x=date, y=new.confirmed)) + 
   geom_point() + geom_smooth() +
@@ -347,7 +347,7 @@ grid.arrange(plot1, plot2, plot3, plot4, nrow=2)
 
 Figure \@ref(fig:plots-deaths) shows death rates caculated in three different ways (see Section \@ref(death-rates) for details). The left chart shows the death rates from `r min.date.txt` to `r max.date.txt` and the right one is a zoom-in view of the rates in last two weeks.
 
-In the right chart, the upper bound (in blue) is decreasing, as there will be more cured cases and fewer deaths daily as time goes on. However, the lower bound (in green) keeps going up, as there are and will be new deaths from the current confirmed cases. Therefore, the final death rate is expected to be in-between of those two rates, and based on the latest data as of `r max.date.txt`, it is be around `r data$rate.lower[n]`%
+In the right chart, the upper bound (in blue) is decreasing, as there will be more cured cases and fewer deaths daily as time goes on. However, the lower bound (in green) keeps going up, as there are and will be new deaths from the active confirmed cases. Therefore, the final death rate is expected to be in-between of those two rates, and based on the latest data as of `r max.date.txt`, it is be around `r data$rate.lower[n]`%
 <!-- between `r data$rate.lower[n]`% and `r data$rate.upper[n]`%  -->
 (see the last row in the table at the end of this report).
 

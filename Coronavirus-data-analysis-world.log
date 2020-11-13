@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.11.20)  24 JUL 2020 15:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.11.20)  13 NOV 2020 17:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -122,15 +122,6 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 ) (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifluatex.sty
 Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
-) (/usr/local/texlive/2018/texmf-dist/tex/latex/base/fixltx2e.sty
-Package: fixltx2e 2016/12/29 v2.1a fixes to LaTeX (obsolete)
-Applying: [2015/01/01] Old fixltx2e package on input line 46.
-
-Package fixltx2e Warning: fixltx2e is not required with releases after 2015
-(fixltx2e)                All fixes are now in the LaTeX kernel.
-(fixltx2e)                See the latexrelease package for details.
-
-Already applied: [0000/00/00] Old fixltx2e package on input line 53.
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/t1enc.def
@@ -338,7 +329,47 @@ Package etexcmds Info: Could not find \expanded.
 ))) (/usr/local/texlive/2018/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count102
-)) (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/hyperref.sty
+)) (/usr/local/texlive/2018/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/xurl/xurl.sty
+Package: xurl 2018/06/02 v 0.04 modify URL breaks
+(/usr/local/texlive/2018/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/bookmark.sty
+Package: bookmark 2016/05/17 v1.26 PDF bookmarks (HO)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/pdfescape.sty
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)) (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2018/09/30 v6.88a Hypertext links for LaTeX
 (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
 Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
@@ -349,20 +380,14 @@ Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
 Package hobsub Info: Skipping package `ltxcmds' (already loaded).
 Package hobsub Info: Skipping package `ifluatex' (already loaded).
-Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
-Package ifvtex Info: VTeX not detected.
+Package hobsub Info: Skipping package `ifvtex' (already loaded).
 Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
-Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
 Package hobsub Info: Skipping package `etexcmds' (already loaded).
 Package hobsub Info: Skipping package `kvsetkeys' (already loaded).
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
-)
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package hobsub Info: Skipping package `pdftexcmds' (already loaded).
+Package hobsub Info: Skipping package `pdfescape' (already loaded).
 Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
 )
 Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
@@ -405,10 +430,6 @@ Package hyperref Info: Backreferencing OFF on input line 4555.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4788.
 \c@Hy@tempcnt=\count106
-(/usr/local/texlive/2018/texmf-dist/tex/latex/url/url.sty
-\Urlmuskip=\muskip11
-Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-)
 LaTeX Info: Redefining \url on input line 5141.
 \XeTeXLinkMargin=\dimen114
 \Fld@menulength=\count107
@@ -438,13 +459,14 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip47
-)
-Package hyperref Info: Option `breaklinks' set `true' on input line 34.
-(/usr/local/texlive/2018/texmf-dist/tex/latex/geometry/geometry.sty
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/bkm-pdftex.def
+File: bkm-pdftex.def 2016/05/17 v1.26 bookmark driver for pdfTeX (HO)
+\BKM@id=\count113
+)) (/usr/local/texlive/2018/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2018/04/16 v5.8 Page Geometry
-\Gm@cnth=\count113
-\Gm@cntv=\count114
-\c@Gm@tempcnt=\count115
+\Gm@cnth=\count114
+\Gm@cntv=\count115
+\c@Gm@tempcnt=\count116
 \Gm@bindingoffset=\dimen117
 \Gm@wd@mp=\dimen118
 \Gm@odd@mp=\dimen119
@@ -454,39 +476,14 @@ Package: geometry 2018/04/16 v5.8 Page Geometry
 \Gm@layouthoffset=\dimen123
 \Gm@layoutvoffset=\dimen124
 \Gm@dimlist=\toks24
-) (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
-(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package color Info: Driver file: pdftex.def on input line 147.
-(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
-)) (/usr/local/texlive/2018/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 Package: fancyvrb 2018/11/01
-Style option: `fancyvrb' v3.0 <2018/11/01> (tvz) (/usr/local/texlive/2018/texmf
--dist/tex/latex/xcolor/xcolor.sty
-Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
-(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package xcolor Info: Driver file: pdftex.def on input line 225.
-LaTeX Info: Redefining \color on input line 709.
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
-Package xcolor Info: Model `RGB' extended on input line 1364.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
-)
-\FV@CodeLineNo=\count116
+Style option: `fancyvrb' v3.0 <2018/11/01> (tvz)
+\FV@CodeLineNo=\count117
 \FV@InFile=\read1
 \FV@TabBox=\box28
-\c@FancyVerbLine=\count117
-\FV@StepNumber=\count118
+\c@FancyVerbLine=\count118
+\FV@StepNumber=\count119
 \FV@OutFile=\write3
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/framed/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
@@ -501,16 +498,16 @@ Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 \LTright=\skip50
 \LTpre=\skip51
 \LTpost=\skip52
-\LTchunksize=\count119
+\LTchunksize=\count120
 \LTcapwidth=\dimen129
 \LT@head=\box29
 \LT@firsthead=\box30
 \LT@foot=\box31
 \LT@lastfoot=\box32
-\LT@cols=\count120
-\LT@rows=\count121
-\c@LT@tables=\count122
-\c@LT@chunks=\count123
+\LT@cols=\count121
+\LT@rows=\count122
+\c@LT@tables=\count123
+\c@LT@chunks=\count124
 \LT@p@ftn=\toks25
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2016/04/27 v1.618033 publication quality tables
@@ -524,17 +521,17 @@ Package: booktabs 2016/04/27 v1.618033 publication quality tables
 \cmidrulesep=\dimen137
 \cmidrulekern=\dimen138
 \defaultaddspace=\dimen139
-\@cmidla=\count124
-\@cmidlb=\count125
+\@cmidla=\count125
+\@cmidlb=\count126
 \@aboverulesep=\dimen140
 \@belowrulesep=\dimen141
-\@thisruleclass=\count126
-\@lastruleclass=\count127
+\@thisruleclass=\count127
+\@lastruleclass=\count128
 \@thisrulewidth=\dimen142
-) (/usr/local/texlive/2018/texmf-dist/tex/latex/mdwtools/footnote.sty
-Package: footnote 1997/01/28 1.13 Save footnotes around boxes
-\fn@notes=\box33
-\fn@width=\dimen143
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/footnotehyper/footnotehyper.sty
+Package: footnotehyper 2018/01/23 v1.1 hyperref aware footnote.sty (JFB)
+\FNH@notes=\box33
+\FNH@width=\dimen143
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty
@@ -566,19 +563,19 @@ Package: array 2018/04/30 v2.4h Tabular extension package (FMi)
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2018/08/03 v2.3 Span multiple rows of a table
 \multirow@colwidth=\skip55
-\multirow@cntb=\count128
+\multirow@cntb=\count129
 \multirow@dima=\skip56
 \bigstrutjot=\dimen148
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/wrapfig/wrapfig.sty
 \wrapoverhang=\dimen149
 \WF@size=\dimen150
-\c@WF@wrappedlines=\count129
+\c@WF@wrappedlines=\count130
 \WF@box=\box36
 \WF@everypar=\toks27
 Package: wrapfig 2003/01/31  v 3.6
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count130
+\c@float@type=\count131
 \float@exts=\toks28
 \float@box=\box37
 \@float@everytoks=\toks29
@@ -598,16 +595,16 @@ Package: tabu 2011/02/26 v2.8 - flexible LaTeX tabulars (FC)
 (/usr/local/texlive/2018/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@box=\box39
-\sift@deathcycles=\count131
+\sift@deathcycles=\count132
 \@vwid@loff=\dimen151
 \@vwid@roff=\dimen152
 )
-\c@taburow=\count132
-\tabu@nbcols=\count133
-\tabu@cnt=\count134
-\tabu@Xcol=\count135
-\tabu@alloc=\count136
-\tabu@nested=\count137
+\c@taburow=\count133
+\tabu@nbcols=\count134
+\tabu@cnt=\count135
+\tabu@Xcol=\count136
+\tabu@alloc=\count137
+\tabu@nested=\count138
 \tabu@target=\dimen153
 \tabu@spreadtarget=\dimen154
 \tabu@naturalX=\dimen155
@@ -644,7 +641,7 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 \UL@skip=\skip60
 \UL@hook=\toks33
 \UL@height=\dimen162
-\UL@pe=\count138
+\UL@pe=\count139
 \UL@pixel=\dimen163
 \ULC@box=\box47
 Package: ulem 2012/05/18
@@ -652,9 +649,12 @@ Package: ulem 2012/05/18
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/makecell/makecell.sty
 Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
 \rotheadsize=\dimen165
-\c@nlinenum=\count139
+\c@nlinenum=\count140
 \TeXr@lab=\toks34
 ) (./Coronavirus-data-analysis-world.aux
+
+LaTeX Warning: Label `tab:table-world' multiply defined.
+
 
 LaTeX Warning: Label `tab:table-world' multiply defined.
 
@@ -673,34 +673,34 @@ LaTeX Warning: Label `tab:table-by-country' multiply defined.
 )
 \openout1 = `Coronavirus-data-analysis-world.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 129.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 129.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 131.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 131.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 129.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 131.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Info: Redefining \microtypecontext on input line 129.
+LaTeX Info: Redefining \microtypecontext on input line 131.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
@@ -713,23 +713,46 @@ Package microtype Info: No adjustment of character kerning.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
+) (/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count141
+\scratchdimen=\dimen166
+\scratchbox=\box48
+\nofMPsegments=\count142
+\nofMParguments=\count143
+\everyMPshowfont=\toks35
+\MPscratchCnt=\count144
+\MPscratchDim=\dimen167
+\MPnumerator=\count145
+\makeMPintoPDFobject=\count146
+\everyMPtoPDFconversion=\toks36
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 )
-\AtBeginShipoutBox=\box48
-Package hyperref Info: Link coloring OFF on input line 129.
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\AtBeginShipoutBox=\box49
+Package hyperref Info: Link coloring OFF on input line 131.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count140
+\c@section@level=\count147
 )
-LaTeX Info: Redefining \ref on input line 129.
-LaTeX Info: Redefining \pageref on input line 129.
-LaTeX Info: Redefining \nameref on input line 129.
-(./Coronavirus-data-analysis-world.out) (./Coronavirus-data-analysis-world.out)
-\@outlinefile=\write4
-\openout4 = `Coronavirus-data-analysis-world.out'.
-
+LaTeX Info: Redefining \ref on input line 131.
+LaTeX Info: Redefining \pageref on input line 131.
+LaTeX Info: Redefining \nameref on input line 131.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -764,106 +787,78 @@ LaTeX Info: Redefining \nameref on input line 129.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count141
-\scratchdimen=\dimen166
-\scratchbox=\box49
-\nofMPsegments=\count142
-\nofMParguments=\count143
-\everyMPshowfont=\toks35
-\MPscratchCnt=\count144
-\MPscratchDim=\dimen167
-\MPnumerator=\count145
-\makeMPintoPDFobject=\count146
-\everyMPtoPDFconversion=\toks36
-) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
-(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
-)
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-38.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 456.
-(/usr/local/texlive/2018/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 131.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 133.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 131.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 133.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 131
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 133
 .
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 131
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 133
 .
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 131.
+(Font)              <17.28> on input line 133.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 131.
+(Font)              <12> on input line 133.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 131.
-LaTeX Font Info:    Try loading font information for U+msa on input line 131.
+(Font)              <10> on input line 133.
+LaTeX Font Info:    Try loading font information for U+msa on input line 133.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 131.
+LaTeX Font Info:    Try loading font information for U+msb on input line 133.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Try loading font information for TS1+lmr on input line 131.
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 133.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 131.
+(Font)              <8> on input line 133.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 131.
+(Font)              <6> on input line 133.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 131.
+(Font)              <5> on input line 133.
 (./Coronavirus-data-analysis-world.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 2.
 )
-\tf@toc=\write5
-\openout5 = `Coronavirus-data-analysis-world.toc'.
+\tf@toc=\write4
+\openout4 = `Coronavirus-data-analysis-world.toc'.
 
 [1
 
 {/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 151.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 153.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 155.
-LaTeX Font Info:    Try loading font information for TS1+lmtt on input line 173
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 157.
+LaTeX Font Info:    Try loading font information for TS1+lmtt on input line 175
 .
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [2]
-Overfull \hbox (13.3591pt too wide) in paragraph at lines 215--232
+Overfull \hbox (13.3591pt too wide) in paragraph at lines 217--234
  [][] 
  []
 
@@ -872,116 +867,116 @@ as been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.301 \end{Shaded}
+l.304 \end{Shaded}
                   ] [4pdfTeX warning (ext4): destination with the same identifi
 er (name{table.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.347 \end{Shaded}
+l.350 \end{Shaded}
                   ] [5]
-<Coronavirus-data-analysis-world_files/figure-latex/map-world-1.pdf, id=190, 12
+<Coronavirus-data-analysis-world_files/figure-latex/map-world-1.pdf, id=114, 12
 05.50375pt x 803.0pt>
 File: Coronavirus-data-analysis-world_files/figure-latex/map-world-1.pdf Graphi
 c file (type pdf)
 <use Coronavirus-data-analysis-world_files/figure-latex/map-world-1.pdf>
 Package pdftex.def Info: Coronavirus-data-analysis-world_files/figure-latex/map
--world-1.pdf  used on input line 453.
+-world-1.pdf  used on input line 456.
 (pdftex.def)             Requested size: 375.79927pt x 250.32425pt.
 [6] [7pdfTeX warning (ext4): destination with the same identifier (name{figure.
 1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.518 \end{Shaded}
+l.521 \end{Shaded}
                    <./Coronavirus-data-analysis-world_files/figure-latex/map-wo
 rld-1.pdf>]
-<Coronavirus-data-analysis-world_files/figure-latex/plot-world-1.pdf, id=257, 4
-62.72874pt x 202.7575pt>
+<Coronavirus-data-analysis-world_files/figure-latex/plot-world-1.pdf, id=182, 4
+61.725pt x 202.7575pt>
 File: Coronavirus-data-analysis-world_files/figure-latex/plot-world-1.pdf Graph
 ic file (type pdf)
 <use Coronavirus-data-analysis-world_files/figure-latex/plot-world-1.pdf>
 Package pdftex.def Info: Coronavirus-data-analysis-world_files/figure-latex/plo
-t-world-1.pdf  used on input line 522.
-(pdftex.def)             Requested size: 462.74173pt x 202.76318pt.
+t-world-1.pdf  used on input line 525.
+(pdftex.def)             Requested size: 461.73796pt x 202.76318pt.
 [8pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.553 \end{Shaded}
+l.556 \end{Shaded}
                    <./Coronavirus-data-analysis-world_files/figure-latex/plot-w
 orld-1.pdf>]
-<Coronavirus-data-analysis-world_files/figure-latex/plots-confirmed-1.pdf, id=2
-74, 459.7175pt x 191.71625pt>
+<Coronavirus-data-analysis-world_files/figure-latex/plots-confirmed-1.pdf, id=1
+99, 459.7175pt x 191.71625pt>
 File: Coronavirus-data-analysis-world_files/figure-latex/plots-confirmed-1.pdf 
 Graphic file (type pdf)
 <use Coronavirus-data-analysis-world_files/figure-latex/plots-confirmed-1.pdf>
 Package pdftex.def Info: Coronavirus-data-analysis-world_files/figure-latex/plo
-ts-confirmed-1.pdf  used on input line 557.
+ts-confirmed-1.pdf  used on input line 560.
 (pdftex.def)             Requested size: 459.74442pt x 191.72746pt.
-<Coronavirus-data-analysis-world_files/figure-latex/plots-2-1.pdf, id=276, 464.
-73625pt x 408.52625pt>
+<Coronavirus-data-analysis-world_files/figure-latex/plots-2-1.pdf, id=201, 462.
+72874pt x 408.52625pt>
 File: Coronavirus-data-analysis-world_files/figure-latex/plots-2-1.pdf Graphic 
 file (type pdf)
 <use Coronavirus-data-analysis-world_files/figure-latex/plots-2-1.pdf>
 Package pdftex.def Info: Coronavirus-data-analysis-world_files/figure-latex/plo
-ts-2-1.pdf  used on input line 595.
-(pdftex.def)             Requested size: 464.74928pt x 408.53772pt.
+ts-2-1.pdf  used on input line 598.
+(pdftex.def)             Requested size: 462.73466pt x 408.53148pt.
 [9pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.601 
+l.604 
        <./Coronavirus-data-analysis-world_files/figure-latex/plots-confirmed-1.
 pdf>] [10pdfTeX warning (ext4): destination with the same identifier (name{figu
 re.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.638 \end{Shaded}
+l.641 \end{Shaded}
                    <./Coronavirus-data-analysis-world_files/figure-latex/plots-
 2-1.pdf>]
-<Coronavirus-data-analysis-world_files/figure-latex/plots-deaths-1.pdf, id=313,
+<Coronavirus-data-analysis-world_files/figure-latex/plots-deaths-1.pdf, id=237,
  463.7325pt x 201.75375pt>
 File: Coronavirus-data-analysis-world_files/figure-latex/plots-deaths-1.pdf Gra
 phic file (type pdf)
 <use Coronavirus-data-analysis-world_files/figure-latex/plots-deaths-1.pdf>
 Package pdftex.def Info: Coronavirus-data-analysis-world_files/figure-latex/plo
-ts-deaths-1.pdf  used on input line 642.
+ts-deaths-1.pdf  used on input line 645.
 (pdftex.def)             Requested size: 463.73842pt x 201.75632pt.
 [11pdfTeX warning (ext4): destination with the same identifier (name{figure.5})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.665 \begin{Shaded}
+l.668 \begin{Shaded}
                      <./Coronavirus-data-analysis-world_files/figure-latex/plot
 s-deaths-1.pdf>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \vbox (badness 8113) detected at line 783
+Underfull \vbox (badness 8113) detected at line 786
  []
 
 [12]
 <Coronavirus-data-analysis-world_files/figure-latex/plot-top-countires-1.pdf, i
-d=330, 445.665pt x 697.60625pt>
+d=254, 446.66875pt x 697.60625pt>
 File: Coronavirus-data-analysis-world_files/figure-latex/plot-top-countires-1.p
 df Graphic file (type pdf)
 <use Coronavirus-data-analysis-world_files/figure-latex/plot-top-countires-1.pd
 f>
 Package pdftex.def Info: Coronavirus-data-analysis-world_files/figure-latex/plo
-t-top-countires-1.pdf  used on input line 787.
-(pdftex.def)             Requested size: 415.54541pt x 650.4596pt.
+t-top-countires-1.pdf  used on input line 790.
+(pdftex.def)             Requested size: 416.48131pt x 650.4596pt.
 [13pdfTeX warning (ext4): destination with the same identifier (name{table.3}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.793 
+l.796 
       ]
 Overfull \vbox (23.97401pt too high) has occurred while \output is active []
 
@@ -990,118 +985,118 @@ Overfull \vbox (23.97401pt too high) has occurred while \output is active []
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.793 
+l.796 
        <./Coronavirus-data-analysis-world_files/figure-latex/plot-top-countires
 -1.pdf>]
-<Coronavirus-data-analysis-world_files/figure-latex/line-top20-1.pdf, id=349, 4
+<Coronavirus-data-analysis-world_files/figure-latex/line-top20-1.pdf, id=273, 4
 57.71pt x 316.18124pt>
 File: Coronavirus-data-analysis-world_files/figure-latex/line-top20-1.pdf Graph
 ic file (type pdf)
 <use Coronavirus-data-analysis-world_files/figure-latex/line-top20-1.pdf>
 Package pdftex.def Info: Coronavirus-data-analysis-world_files/figure-latex/lin
-e-top20-1.pdf  used on input line 817.
+e-top20-1.pdf  used on input line 820.
 (pdftex.def)             Requested size: 457.72984pt x 316.19493pt.
-<Coronavirus-data-analysis-world_files/figure-latex/line-top20-2.pdf, id=350, 4
+<Coronavirus-data-analysis-world_files/figure-latex/line-top20-2.pdf, id=274, 4
 57.71pt x 316.18124pt>
 File: Coronavirus-data-analysis-world_files/figure-latex/line-top20-2.pdf Graph
 ic file (type pdf)
 <use Coronavirus-data-analysis-world_files/figure-latex/line-top20-2.pdf>
 Package pdftex.def Info: Coronavirus-data-analysis-world_files/figure-latex/lin
-e-top20-2.pdf  used on input line 826.
+e-top20-2.pdf  used on input line 829.
 (pdftex.def)             Requested size: 457.72984pt x 316.19493pt.
 [15 <./Coronavirus-data-analysis-world_files/figure-latex/line-top20-1.pdf>]
-Underfull \vbox (badness 10000) detected at line 858
+Underfull \vbox (badness 10000) detected at line 861
  []
 
 [16 <./Coronavirus-data-analysis-world_files/figure-latex/line-top20-2.pdf>]
-<Coronavirus-data-analysis-world_files/figure-latex/circle-top20-1.pdf, id=374,
+<Coronavirus-data-analysis-world_files/figure-latex/circle-top20-1.pdf, id=299,
  566.115pt x 641.39626pt>
 File: Coronavirus-data-analysis-world_files/figure-latex/circle-top20-1.pdf Gra
 phic file (type pdf)
 <use Coronavirus-data-analysis-world_files/figure-latex/circle-top20-1.pdf>
 Package pdftex.def Info: Coronavirus-data-analysis-world_files/figure-latex/cir
-cle-top20-1.pdf  used on input line 862.
+cle-top20-1.pdf  used on input line 865.
 (pdftex.def)             Requested size: 469.76303pt x 532.23152pt.
 [17pdfTeX warning (ext4): destination with the same identifier (name{figure.7})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.874 \begin{Shaded}
+l.877 \begin{Shaded}
                      <./Coronavirus-data-analysis-world_files/figure-latex/circ
 le-top20-1.pdf>]
-<Coronavirus-data-analysis-world_files/figure-latex/plot-by-type-1.pdf, id=390,
+<Coronavirus-data-analysis-world_files/figure-latex/plot-by-type-1.pdf, id=315,
  562.1pt x 697.60625pt>
 File: Coronavirus-data-analysis-world_files/figure-latex/plot-by-type-1.pdf Gra
 phic file (type pdf)
 <use Coronavirus-data-analysis-world_files/figure-latex/plot-by-type-1.pdf>
 Package pdftex.def Info: Coronavirus-data-analysis-world_files/figure-latex/plo
-t-by-type-1.pdf  used on input line 908.
+t-by-type-1.pdf  used on input line 911.
 (pdftex.def)             Requested size: 469.75067pt x 582.99411pt.
 [18] [19pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.8}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.929 \end{Shaded}
+l.932 \end{Shaded}
                    <./Coronavirus-data-analysis-world_files/figure-latex/plot-b
 y-type-1.pdf>]
-<Coronavirus-data-analysis-world_files/figure-latex/plot-by-type-2-1.pdf, id=40
-8, 562.1pt x 336.25626pt>
+<Coronavirus-data-analysis-world_files/figure-latex/plot-by-type-2-1.pdf, id=33
+3, 562.1pt x 336.25626pt>
 File: Coronavirus-data-analysis-world_files/figure-latex/plot-by-type-2-1.pdf G
 raphic file (type pdf)
 <use Coronavirus-data-analysis-world_files/figure-latex/plot-by-type-2-1.pdf>
 Package pdftex.def Info: Coronavirus-data-analysis-world_files/figure-latex/plo
-t-by-type-2-1.pdf  used on input line 933.
+t-by-type-2-1.pdf  used on input line 936.
 (pdftex.def)             Requested size: 469.75067pt x 281.01155pt.
 [20pdfTeX warning (ext4): destination with the same identifier (name{figure.9})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.973 \end{Shaded}
+l.976 \end{Shaded}
                    <./Coronavirus-data-analysis-world_files/figure-latex/plot-b
 y-type-2-1.pdf>]
-<Coronavirus-data-analysis-world_files/figure-latex/plot-by-country-1.pdf, id=4
-21, 568.1225pt x 707.64375pt>
+<Coronavirus-data-analysis-world_files/figure-latex/plot-by-country-1.pdf, id=3
+46, 567.11874pt x 707.64375pt>
 File: Coronavirus-data-analysis-world_files/figure-latex/plot-by-country-1.pdf 
 Graphic file (type pdf)
 <use Coronavirus-data-analysis-world_files/figure-latex/plot-by-country-1.pdf>
 Package pdftex.def Info: Coronavirus-data-analysis-world_files/figure-latex/plo
-t-by-country-1.pdf  used on input line 977.
-(pdftex.def)             Requested size: 469.7731pt x 585.14143pt.
+t-by-country-1.pdf  used on input line 980.
+(pdftex.def)             Requested size: 469.77385pt x 586.17801pt.
 [21] [22pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.10}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1005 \end{Shaded}
+l.1008 \end{Shaded}
                     <./Coronavirus-data-analysis-world_files/figure-latex/plot-
 by-country-1.pdf>]
 <Coronavirus-data-analysis-world_files/figure-latex/plot-by-country-log-1.pdf, 
-id=442, 567.11874pt x 707.64375pt>
+id=366, 567.11874pt x 707.64375pt>
 File: Coronavirus-data-analysis-world_files/figure-latex/plot-by-country-log-1.
 pdf Graphic file (type pdf)
 <use Coronavirus-data-analysis-world_files/figure-latex/plot-by-country-log-1.p
 df>
 Package pdftex.def Info: Coronavirus-data-analysis-world_files/figure-latex/plo
-t-by-country-log-1.pdf  used on input line 1009.
+t-by-country-log-1.pdf  used on input line 1012.
 (pdftex.def)             Requested size: 469.77385pt x 586.17801pt.
 [23] [24pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.11}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1016 \begin{Shaded}
+l.1019 \begin{Shaded}
                       <./Coronavirus-data-analysis-world_files/figure-latex/plo
 t-by-country-log-1.pdf>]
-<Coronavirus-data-analysis-world_files/figure-latex/plot-deaths-all-1.pdf, id=4
-61, 463.7325pt x 707.64375pt>
+<Coronavirus-data-analysis-world_files/figure-latex/plot-deaths-all-1.pdf, id=3
+85, 463.7325pt x 707.64375pt>
 File: Coronavirus-data-analysis-world_files/figure-latex/plot-deaths-all-1.pdf 
 Graphic file (type pdf)
 <use Coronavirus-data-analysis-world_files/figure-latex/plot-deaths-all-1.pdf>
 Package pdftex.def Info: Coronavirus-data-analysis-world_files/figure-latex/plo
-t-deaths-all-1.pdf  used on input line 1049.
+t-deaths-all-1.pdf  used on input line 1052.
 (pdftex.def)             Requested size: 426.24281pt x 650.43549pt.
 [25]
 Overfull \vbox (23.9499pt too high) has occurred while \output is active []
@@ -1111,106 +1106,103 @@ Overfull \vbox (23.9499pt too high) has occurred while \output is active []
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1055 
+l.1058 
         <./Coronavirus-data-analysis-world_files/figure-latex/plot-deaths-all-1
 .pdf>] [27pdfTeX warning (ext4): destination with the same identifier (name{tab
 le.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1146 \end{Shaded}
-                   ] [28] [29]
-Overfull \hbox (17.5134pt too wide) in alignment at lines 1411--1416
+l.1149 \end{Shaded}
+                   ] [28] [29] [30]
+Overfull \hbox (22.51282pt too wide) in alignment at lines 1549--1554
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.5134pt too wide) in alignment at lines 1416--1421
+Overfull \hbox (22.51282pt too wide) in alignment at lines 1554--1559
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.5134pt too wide) in alignment at lines 1421--1423
+Overfull \hbox (22.51282pt too wide) in alignment at lines 1559--1561
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.5134pt too wide) in alignment at lines 1423--1425
+Overfull \hbox (22.51282pt too wide) in alignment at lines 1561--1563
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.5134pt too wide) in alignment at lines 1425--1449
+Overfull \hbox (22.51282pt too wide) in alignment at lines 1563--1587
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.5134pt too wide) in alignment at lines 1449--1473
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (17.5134pt too wide) in alignment at lines 1473--1497
- [] [] [] [] [] [] [] [] [] 
- []
-
-[30]
-Overfull \hbox (17.5134pt too wide) in alignment at lines 1497--1521
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (17.5134pt too wide) in alignment at lines 1521--1545
- [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (17.5134pt too wide) in alignment at lines 1545--1569
+Overfull \hbox (22.51282pt too wide) in alignment at lines 1587--1611
  [] [] [] [] [] [] [] [] [] 
  []
 
 [31]
-Overfull \hbox (17.5134pt too wide) in alignment at lines 1569--1593
+Overfull \hbox (22.51282pt too wide) in alignment at lines 1611--1635
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.5134pt too wide) in alignment at lines 1593--1617
+Overfull \hbox (22.51282pt too wide) in alignment at lines 1635--1659
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.5134pt too wide) in alignment at lines 1617--1641
+Overfull \hbox (22.51282pt too wide) in alignment at lines 1659--1683
  [] [] [] [] [] [] [] [] [] 
  []
 
 [32]
-Overfull \hbox (17.5134pt too wide) in alignment at lines 1641--1652
+Overfull \hbox (22.51282pt too wide) in alignment at lines 1683--1707
  [] [] [] [] [] [] [] [] [] 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1688.
-[33] [34]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1688.
-(./Coronavirus-data-analysis-world.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1688.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1688.
 
-Package rerunfilecheck Info: File `Coronavirus-data-analysis-world.out' has not
- changed.
-(rerunfilecheck)             Checksum: 94446D5E7FC73F0215A5949F13CC5F5C;3925.
+Overfull \hbox (22.51282pt too wide) in alignment at lines 1707--1731
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.51282pt too wide) in alignment at lines 1731--1755
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[33]
+Overfull \hbox (22.51282pt too wide) in alignment at lines 1755--1779
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (22.51282pt too wide) in alignment at lines 1779--1794
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[34]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1830.
+[35]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1830.
+(./Coronavirus-data-analysis-world.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1830.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1830.
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 15089 strings out of 492639
- 223048 string characters out of 6129301
- 431030 words of memory out of 5000000
- 18528 multiletter control sequences out of 15000+600000
- 90396 words of font info for 111 fonts, out of 8000000 for 9000
+ 15357 strings out of 492639
+ 227319 string characters out of 6129301
+ 444466 words of memory out of 5000000
+ 18782 multiletter control sequences out of 15000+600000
+ 90479 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,9n,39p,839b,488s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,9n,38p,830b,490s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
 texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</usr/local/texlive/2018/
 texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2018/texmf-dist
@@ -1226,11 +1218,11 @@ lmri10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmri7.pfb>
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/loca
 l/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/
 2018/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on Coronavirus-data-analysis-world.pdf (34 pages, 1221671 bytes)
+Output written on Coronavirus-data-analysis-world.pdf (35 pages, 1589367 bytes)
 .
 PDF statistics:
- 611 PDF objects out of 1000 (max. 8388607)
- 492 compressed objects within 5 object streams
- 107 named destinations out of 1000 (max. 500000)
+ 615 PDF objects out of 1000 (max. 8388607)
+ 495 compressed objects within 5 object streams
+ 108 named destinations out of 1000 (max. 500000)
  14607 words of extra memory for PDF output out of 17280 (max. 10000000)
 

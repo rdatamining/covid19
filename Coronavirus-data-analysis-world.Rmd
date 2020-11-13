@@ -96,7 +96,7 @@ Below we check the time frame of the data.
 ```{r timeframe}
 n.col <- ncol(raw.data.confirmed)
 ## get dates from column names
-dates <- names(raw.data.confirmed)[5:n.col] %>% substr(2,8) %>% mdy()
+dates <- names(raw.data.confirmed)[5:n.col] %>% str_replace('X', '') %>% mdy()
 range(dates)
 min.date <- min(dates)
 max.date <- max(dates)
@@ -125,7 +125,7 @@ cleanData <- function(data) {
   ## convert from wide to long format
   data %<>% gather(key=date, value=count, -country)
   ## convert from character to date
-  data %<>% mutate(date = date %>% substr(2,8) %>% mdy())
+  data %<>% mutate(date = date %>% str_replace('X', '') %>% mdy())
   ## aggregate by country
   data %<>% group_by(country, date) %>% summarise(count=sum(count, na.rm=T)) %>% as.data.frame()
   return(data)
@@ -143,9 +143,10 @@ data <- data.confirmed %>% merge(data.deaths, all=T) %>% merge(data.recovered, a
 ## countries/regions with confirmed cases, excl. cruise ships
 countries <- data %>% pull(country) %>% setdiff('Cruise Ship')
 
-## first 10 records when it first broke out in China
-data %>% filter(country=='China') %>% head(10) %>% 
-  kable('latex', booktabs=T, caption='Raw Data (with first 10 Columns Only)',
+## latest 10 records in US
+data %>% filter(country=='US') %>% tail(10) %>% 
+  kable('latex', row.names=F, booktabs=T, 
+        caption='Raw Data (with first 10 Columns Only)',
         format.args=list(big.mark=',')) %>%
   kable_styling(latex_options = c('striped', 'hold_position', 'repeat_header'))
 ```
@@ -167,8 +168,8 @@ data.world <- data %>% group_by(date) %>%
 
 data %<>% rbind(data.world)
 
-## current confirmed cases
-data %<>% mutate(current.confirmed = confirmed - deaths - recovered)
+## active confirmed cases
+data %<>% mutate(active.confirmed = confirmed - deaths - recovered)
 ```
 
 
@@ -181,7 +182,7 @@ After that, the daily increases of death and recovered cases and the death rates
 1) there were much more deaths than recovered cases when the coronavirus broke out and when it was not contained, and 
 2) the daily number of death will decrease and that of recovered will increase as it becomes contained and more effective measures and treatments are used. 
 
-`rate.lower` is caculated with total dead and confirmed cases. It is a lower bound of death rate, because there are and will be new deaths from the current confirmed cases. The final death rate is expected to be in between of the above two rates. 
+`rate.lower` is caculated with total dead and confirmed cases. It is a lower bound of death rate, because there are and will be new deaths from the active confirmed cases. The final death rate is expected to be in between of the above two rates. 
 
 `rate.daily` is caculated with the daily dead and recovered cases and therefore is more volatile than the above two. However, it can give us a clue of the current situlation: whether it is very serious or is getting better.
 
@@ -212,11 +213,11 @@ data %<>% mutate(rate.daily = (100 * new.deaths / (new.deaths + new.recovered)) 
 
 ## convert from wide to long format, for drawing area plots
 data.long <- data %>% 
-  select(c(country, date, confirmed, current.confirmed, recovered, deaths)) %>% 
+  select(c(country, date, confirmed, active.confirmed, recovered, deaths)) %>% 
   gather(key=type, value=count, -c(country, date))
 ## set factor levels to show them in a desirable order
 data.long %<>% mutate(type=recode_factor(type, confirmed='Total Confirmed', 
-                                       current.confirmed='Current Confirmed', 
+                                       active.confirmed='Active Confirmed', 
                                        recovered='Recovered', 
                                        deaths='Deaths'))
 
@@ -326,7 +327,7 @@ grid.arrange(plot1, plot2, ncol=2)
 ```
 
 
-## Current Confirmed Cases
+## Active Confirmed Cases
 
 
 ```{r plot-one-country, fig.height=6}
@@ -336,11 +337,11 @@ n <- nrow(data.world)
 
 
 
-```{r plots-confirmed, fig.height=3, fig.cap='Current Confirmed Cases'}
-## current confirmed and daily new confirmed
-plot1 <- ggplot(data.world, aes(x=date, y=current.confirmed)) + 
+```{r plots-confirmed, fig.height=3, fig.cap='Active Confirmed Cases'}
+## active confirmed and daily new confirmed
+plot1 <- ggplot(data.world, aes(x=date, y=active.confirmed)) + 
   geom_point() + geom_smooth() +
-  xlab('') + ylab('Count') + labs(title='Current Confirmed Cases') +
+  xlab('') + ylab('Count') + labs(title='Active Confirmed Cases') +
   theme(axis.text.x=element_text(angle=45, hjust=1))
 plot2 <- ggplot(data.world, aes(x=date, y=new.confirmed)) + 
   geom_point() + geom_smooth() +
@@ -350,7 +351,7 @@ plot2 <- ggplot(data.world, aes(x=date, y=new.confirmed)) +
 grid.arrange(plot1, plot2, ncol=2)
 ```
 
-Figure \@ref(fig:plots-confirmed) shows the numbers of current (see left chart) and new (see right chart) confirmed cases. The blue lines are smoothed conditional means and the grey band around them show the 95% confidence interval.
+Figure \@ref(fig:plots-confirmed) shows the numbers of active (see left chart) and new (see right chart) confirmed cases. The blue lines are smoothed conditional means and the grey band around them show the 95% confidence interval.
 
 ## Deaths and Recovered Cases
 
@@ -381,7 +382,7 @@ grid.arrange(plot1, plot2, plot3, plot4, nrow=2)
 
 Figure \@ref(fig:plots-deaths) shows death rates caculated in three different ways (see Section \@ref(death-rates) for details). The left chart shows the death rates from `r min.date.txt` to `r max.date.txt` and the right one is a zoom-in view of the rates in last two weeks.
 
-In the right chart, the upper bound (in blue) is decreasing, as there will be more recovered cases and fewer dead ones daily as time goes on. However, the lower bound (in green) keeps going up, as there are and will be new deaths from the current confirmed cases. Therefore, the final death rate is expected to be in-between of those two rates, and based on the latest data retrieved as of `r max.date.txt`, it will be between `r data.world$rate.lower[n]`% and `r data.world$rate.upper[n]`%.
+In the right chart, the upper bound (in blue) is decreasing, as there will be more recovered cases and fewer dead ones daily as time goes on. However, the lower bound (in green) keeps going up, as there are and will be new deaths from the active confirmed cases. Therefore, the final death rate is expected to be in-between of those two rates, and based on the latest data retrieved as of `r max.date.txt`, it will be between `r data.world$rate.lower[n]`% and `r data.world$rate.upper[n]`%.
 
 A surge in the daily death rate (in red) in late March suggests that the situlation is changing dramatically (actually, getting worse) and that above lower/upper bounds are likely to increase shortly. A likely reason of that surge is the outbreak of coronavirus in Iran, Europe and US.
 
@@ -426,7 +427,7 @@ Next, we will have a look at the top 20 countries in total confirmed cases.
 ## ranking by confirmed cases
 data.latest.all <- data %>% filter(date == max(date)) %>% 
   select(country, date, 
-         confirmed, new.confirmed, current.confirmed,
+         confirmed, new.confirmed, active.confirmed,
          recovered, deaths, new.deaths, death.rate=rate.lower) %>%
   mutate(ranking = dense_rank(desc(confirmed)))
 ```
@@ -447,11 +448,11 @@ data.latest <- data.latest.all %>% filter(!is.na(country)) %>%
   mutate(country=country %>% factor(levels=c(top.countries, 'Others')))
 data.latest %<>% group_by(country) %>% 
   summarise(confirmed=sum(confirmed), new.confirmed=sum(new.confirmed), 
-            current.confirmed=sum(current.confirmed),
+            active.confirmed=sum(active.confirmed),
             recovered=sum(recovered), deaths=sum(deaths), new.deaths=sum(new.deaths)) %>% 
   mutate(death.rate=(100 * deaths/confirmed) %>% round(1))
 data.latest %<>% select(c(country, confirmed, deaths, death.rate,
-                 new.confirmed, new.deaths, current.confirmed))
+                 new.confirmed, new.deaths, active.confirmed))
 ```
 
 
@@ -478,7 +479,7 @@ data.latest.long %<>% mutate(type=recode_factor(type,
                                        death.rate='Death Rate (%)',
                                        new.confirmed='New Confirmed (compared with one day before)',
                                        new.deaths='New Deaths (compared with one day before)', 
-                                       current.confirmed='Current Confirmed'))
+                                       active.confirmed='Active Confirmed'))
 ```            
 
 
@@ -530,11 +531,11 @@ The two figures below show the numbers of confirmed cases and deaths of top 20 c
 
 ```{r circle-top20, fig.height=9, fig.width=8, out.width='\\textwidth', fig.cap='Top 20 Countries'}
 df <- data.latest %>% filter(country %in% setdiff(top.countries, 'World')) 
-## breaks for circle size in legend; needs to be adjusted accordingly when the number of total confirmed cases increases signficantly
+## breaks for circle size in legend; needs to be adjusted accordingly when the number of total confirmed cases increases significantly
 breaks.confirmed <- c(5e3, 1e4, 2e4, 5e4, 1e5, 2e5, 5e5, 1e6, 2e6, 5e6, 1e7)
 
-plot1 <- df %>% ggplot(aes(x=confirmed, y=deaths, col=death.rate, size=current.confirmed)) +
-  scale_size(name='Current Confirmed', trans='log2', breaks=breaks.confirmed) +
+plot1 <- df %>% ggplot(aes(x=confirmed, y=deaths, col=death.rate, size=active.confirmed)) +
+  scale_size(name='Active Confirmed', trans='log2', breaks=breaks.confirmed) +
   geom_text(aes(label=country), size=2.5, check_overlap=T, vjust=-1.6) +
   geom_point() + 
   xlab('Total Confirmed') + ylab('Total Deaths') +
@@ -543,8 +544,8 @@ plot1 <- df %>% ggplot(aes(x=confirmed, y=deaths, col=death.rate, size=current.c
   scale_x_log10() + scale_y_log10() +
   labs(title=paste0('Top 20 Countries - Confirmed vs Deaths (log scale)'))
 
-plot2 <- df %>% ggplot(aes(x=new.confirmed, y=new.deaths, col=death.rate, size=current.confirmed)) +
-  scale_size(name='Current Confirmed', trans='log2', breaks=breaks.confirmed) +
+plot2 <- df %>% ggplot(aes(x=new.confirmed, y=new.deaths, col=death.rate, size=active.confirmed)) +
+  scale_size(name='Active Confirmed', trans='log2', breaks=breaks.confirmed) +
   geom_text(aes(label=country), size=2.5, check_overlap=T, vjust=-1.6) +
   geom_point() +
   xlab('New Confirmed') + ylab('New Deaths') +
@@ -560,7 +561,7 @@ grid.arrange(plot1, plot2, ncol=1)
 ## Comparison across Countries
 
 
-The area plots blow show the numbers of dead, recovered, total and current confimed cases. Note that, in the area plot, the total number of total confirmed cases is represented by the total areas of current confirmed, recovered and dead.
+The area plots blow show the numbers of dead, recovered, total and active confimed cases. Note that, in the area plot, the total number of total confirmed cases is represented by the total areas of active confirmed, recovered and dead.
 
 ```{r plot-by-type, fig.height=10, fig.width=8, fig.cap='Cases around the World'}
 
@@ -671,7 +672,7 @@ p + facet_wrap(~country, ncol=4, scales='free_y')
 ```
 
 
-Figures \@ref(fig:plot-by-country) and \@ref(fig:plot-by-country-log) show that China has entered a post-epidemic phase, followed by Australia and Germany, with an increase of recovered cases (in green) every day and a shrinking of the current confirmed cases (in red). In contrast, there are sharp surges in Russia, South America (incl. Brazil, Peru, Chile and Mexico) and West/South Asia (incl. Saudi Arabia, India and Pakistan), which suggests that the virus spread is accerelating there.
+Figures \@ref(fig:plot-by-country) and \@ref(fig:plot-by-country-log) show that China has entered a post-epidemic phase, followed by Australia and Germany, with an increase of recovered cases (in green) every day and a shrinking of the active confirmed cases (in red). In contrast, there are sharp surges in Russia, South America (incl. Brazil, Peru, Chile and Mexico) and West/South Asia (incl. Saudi Arabia, India and Pakistan), which suggests that the virus spread is accerelating there.
 
 
 
@@ -696,12 +697,12 @@ df %>% ggplot(aes(x=date, y=count, color=type)) +
 
 ## Countries with Highest Death Rates
 
-Below are a list of top 20 countries with the highest death rates out of countires having 2000+ confirmed cases. 
+Below are a list of top 20 countries with the highest death rates out of countries having 2000+ confirmed cases. 
 
 ```{r death-rate-top20}
 ## sort the latest data by death rate, and if tie, by confirmed
 df <- data %>% filter(date == max(date) & country != 'World' & confirmed >= 2000) %>% 
-  select(country, confirmed, new.confirmed, current.confirmed,
+  select(country, confirmed, new.confirmed, active.confirmed,
          recovered, deaths, new.deaths, death.rate=rate.lower) %>%
   arrange(desc(death.rate, confirmed))
 
@@ -736,7 +737,7 @@ Blow is the processed data for this analysis.
 ```{r table-world}
 ## sort by date descendingly and re-order columns
 data.world %<>% arrange(desc(date)) %>% 
-  select(c(date, confirmed, deaths, recovered, current.confirmed,
+  select(c(date, confirmed, deaths, recovered, active.confirmed,
            new.confirmed, new.deaths, new.recovered, rate.lower, rate.upper, rate.daily))
 ## output as a table
 data.world %>% 
