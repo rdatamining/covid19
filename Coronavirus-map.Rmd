@@ -63,7 +63,7 @@ x %<>% select(c(Country.Region, Province.State, Lat, Long, confirmed)) %>%
 m <- leaflet(width=1200, height=800) %>% addTiles()
 # circle marker
 m %>% addCircleMarkers(x$Long, x$Lat, 
-                       # radius=2+log2(x$confirmed), stroke=F,
+                       #radius=log2(x$confirmed), stroke=F,
                        radius=0.03*sqrt(x$confirmed), stroke=F,
                        color='red', fillOpacity=0.5,
                        popup=x$txt)
